@@ -10,6 +10,7 @@
   @media only screen and (max-width: $bp-medium) {
     flex-direction: column;
     justify-content: space-between;
+    height: auto;
   }
 
   @media only screen and (max-width: $bp-small) {
@@ -52,7 +53,7 @@
     }
 
     @media only screen and (max-width: $bp-small) {
-      height: 70%;
+      min-height: 50rem;
     }
   }
 
