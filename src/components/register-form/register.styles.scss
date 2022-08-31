@@ -1,0 +1,32 @@
+@import '../../styles/styles';
+
+.register {
+  &__box {
+    height: 80%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      height: 80%;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__form {
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 5rem;
+    }
+  }
+}
