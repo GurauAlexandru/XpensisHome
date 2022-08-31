@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
+$text-style-primary: 'Roboto', sans-serif;
+
+// Breakpoints
+$bp-4k: 156em; // 2500px
+$bp-largest: 75em; // 1200/16 = 75em
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+// Colors
+$color-primary: #14213d;
+$color-secondary: #22577a;
+$color-tertiary: #00bbf9;
+
+$color-green: #2a9d8f;
+$color-red: #e5383b;
+
+$color-white: white;
+$color-black: #000000;
+
+// Shadows
+
+// Headers
+.header {
+  color: $color-primary;
+  letter-spacing: 0.12rem;
+}
+
+.h-big {
+  font-size: 5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 4rem;
+  }
+}
+.h-large {
+  font-size: 3rem;
+}
+.h-normal {
+  font-size: 2rem;
+}
+.h-small {
+  font-size: 1.5rem;
+}
+
+// Paragraphs
+
+// Margins
+.mt-large {
+  margin-top: 5rem;
+}
