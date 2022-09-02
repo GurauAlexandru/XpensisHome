@@ -13,7 +13,7 @@ $bp-smallest: 31.25em; // 500px
 // Colors
 $color-primary: #14213d;
 $color-secondary: #22577a;
-$color-tertiary: #00bbf9;
+$color-tertiary: #f7f7f7;
 
 $color-green: #2a9d8f;
 $color-red: #e5383b;
@@ -41,6 +41,8 @@ $color-black: #000000;
 }
 .h-normal {
   font-size: 2rem;
+
+  // text-shadow: 1px 1px 2px rgba(black, 0.6);
 }
 .h-small {
   font-size: 1.5rem;

@@ -40,6 +40,7 @@ const SignIn = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    setErrorMessage(false);
 
     setFormFields({ ...formFields, [name]: value });
   };

@@ -1,0 +1,12 @@
+@import '../../styles/styles';
+
+.overview {
+  height: 100vh;
+  width: 85vw;
+  padding: 5rem;
+  background-color: $color-tertiary;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
