@@ -5,6 +5,7 @@ import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 import users from '../../store/users';
 import { UserContext } from '../../context/user.context';
+import ErrorMessage from '../errors/message/error.message.component';
 
 const defaultFormFields = {
   email: '',
@@ -16,6 +17,7 @@ const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const [user, setUser] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   useEffect(() => {
     setUser(users);
@@ -26,10 +28,7 @@ const SignIn = () => {
   });
 
   const handleSubmit = () => {
-    if (!myUser) {
-      alert('User not found');
-    }
-    setCurrentUser(myUser);
+    myUser ? setCurrentUser(myUser) : setErrorMessage(true);
   };
 
   const handleChange = (event) => {
@@ -41,7 +40,7 @@ const SignIn = () => {
   return (
     <div className='sign-in__box'>
       <h3 className='header h-normal'>Login into your account</h3>
-      <form className='sign-in__form' onSubmit={() => handleSubmit()}>
+      <div className='sign-in__form'>
         <FormInput
           label='Email'
           type='email'
@@ -58,10 +57,15 @@ const SignIn = () => {
           name='password'
           value={password}
         />
-        <Button className='button button__normal mt-large' type='submit'>
+        <Button
+          className='button button__normal mt-large'
+          type='button'
+          onClick={() => handleSubmit()}
+        >
           Login
         </Button>
-      </form>
+      </div>
+      {errorMessage ? <ErrorMessage /> : ''}
     </div>
   );
 };
