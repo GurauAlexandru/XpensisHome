@@ -6,6 +6,7 @@ import FormInput from '../form-input/form-input.component';
 import users from '../../store/users';
 import { UserContext } from '../../context/user.context';
 import ErrorMessage from '../errors/message/error.message.component';
+import SuccessMessage from '../success/message/success.message.component';
 
 const defaultFormFields = {
   email: '',
@@ -18,6 +19,7 @@ const SignIn = () => {
   const { email, password } = formFields;
   const [user, setUser] = useState([]);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [successMessage, setsuccessMessage] = useState(false);
 
   useEffect(() => {
     setUser(users);
@@ -28,7 +30,12 @@ const SignIn = () => {
   });
 
   const handleSubmit = () => {
-    myUser ? setCurrentUser(myUser) : setErrorMessage(true);
+    if (!myUser) setErrorMessage(true);
+    if (myUser) setsuccessMessage(true);
+
+    setTimeout(() => {
+      setCurrentUser(myUser);
+    }, 3000);
   };
 
   const handleChange = (event) => {
@@ -40,7 +47,13 @@ const SignIn = () => {
   return (
     <div className='sign-in__box'>
       <h3 className='header h-normal'>Login into your account</h3>
-      <div className='sign-in__form'>
+      <form
+        className='sign-in__form'
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
         <FormInput
           label='Email'
           type='email'
@@ -57,14 +70,11 @@ const SignIn = () => {
           name='password'
           value={password}
         />
-        <Button
-          className='button button__normal mt-large'
-          type='button'
-          onClick={() => handleSubmit()}
-        >
+        <Button className='button button__normal mt-large' type='submit'>
           Login
         </Button>
-      </div>
+      </form>
+      {successMessage ? <SuccessMessage /> : ''}
       {errorMessage ? <ErrorMessage /> : ''}
     </div>
   );
