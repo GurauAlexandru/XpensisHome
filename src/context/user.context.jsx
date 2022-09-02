@@ -7,7 +7,11 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const value = { currentUser, setCurrentUser };
 
+  const logout = () => {
+    setCurrentUser(null);
+  };
+
+  const value = { currentUser, setCurrentUser, logout };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
