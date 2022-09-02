@@ -22,13 +22,7 @@ const SignIn = () => {
   }, []);
 
   const myUser = user.find((el) => {
-    try {
-      if (el.email === email && el.password === password) {
-        return el;
-      }
-    } catch (err) {
-      alert('email or password wrong, please try again');
-    }
+    return el.email === email && el.password === password;
   });
 
   const handleSubmit = () => {
