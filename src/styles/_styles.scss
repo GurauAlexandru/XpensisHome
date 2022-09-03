@@ -71,16 +71,6 @@ $color-black: #000000;
   align-items: flex-start;
 
   @media only screen and (max-width: $bp-small) {
-    order: 1;
-    width: 100%;
-    overflow: scroll;
-    // height: calc(100vh - 10rem);
-    height: 100vh;
-    padding: 0;
-    // padding-top: 5rem;
-
-    z-index: 1;
-
-    position: relative;
+    padding: 5rem 1rem;
   }
 }
