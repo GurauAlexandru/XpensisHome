@@ -45,6 +45,10 @@ $color-black: #000000;
 .h-small {
   font-size: 1.5rem;
 }
+.h-special {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
 
 // Paragraphs
 
@@ -67,12 +71,14 @@ $color-black: #000000;
   background-color: $color-tertiary;
 
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 
   @media only screen and (max-width: $bp-small) {
-    height: 90vh;
+    height: 85vh;
     width: 100%;
-    padding: 0;
+    padding: 2rem 1rem;
+    order: 1;
   }
 }

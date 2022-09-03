@@ -13,12 +13,11 @@ import pieChart from '../../assets/icons/pie-chart.svg';
 import logOut from '../../assets/icons/log-out.svg';
 
 const Home = () => {
-  const { currentUser, logout } = useContext(UserContext);
+  const { logout } = useContext(UserContext);
 
   return (
     <div className='home-setup'>
       <main className='home-page'>
-        <h3 className='header h-normal noMobile'>{currentUser.name}</h3>
         <Link to='/' className='link-page'>
           <Icon src={overviewIcon} alt='overview icon' />
           <p className='desc'>Overview</p>

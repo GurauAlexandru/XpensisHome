@@ -1,8 +1,10 @@
 import './details.styles.scss';
 
+import Bar from '../../components/bar/bar.component';
+
 const AccountDetails = () => (
   <div className='body-container account-details'>
-    <h2 className='header h-large'>Account details</h2>
+    <Bar header='Account details' />
   </div>
 );
 

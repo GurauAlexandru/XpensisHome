@@ -1,9 +1,13 @@
 import './overview.styles.scss';
 
+import Bar from '../../components/bar/bar.component';
+
 const Overview = () => {
   return (
     <div className='body-container overview'>
-      <h2 className='header h-large'>Overview</h2>
+      <Bar header='Overview' />
+
+      <div className='cart'></div>
     </div>
   );
 };
