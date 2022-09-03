@@ -16,6 +16,7 @@
   width: 15vw;
   border-right: 1px solid rgba($color-black, 0.1);
   padding: 5rem 0;
+  background-color: $color-white;
 
   display: flex;
   flex-direction: column;
@@ -29,15 +30,17 @@
   @media only screen and (max-width: $bp-small) {
     height: 10rem;
     width: 100%;
-    position: static;
-    // left: 0;
-    // bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     padding: 0;
 
     flex-direction: row;
     justify-content: space-around;
     order: 2;
     gap: 0;
+
+    z-index: 2;
   }
 }
 
