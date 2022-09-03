@@ -7,6 +7,7 @@ import WelcomePage from './routes/welcome page/welcome.page';
 import Home from './routes/home/home.page';
 import Overview from './routes/overwiew/overview.page';
 import AccountBudget from './routes/budget/budget.page';
+import AccountDetails from './routes/details/details.page';
 
 function App() {
   const { currentUser } = useContext(UserContext);
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />}>
         <Route index element={<Overview />} />
+        <Route path='/details' element={<AccountDetails />} />
         <Route path='/budget' element={<AccountBudget />} />
       </Route>
     </Routes>

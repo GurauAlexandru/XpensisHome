@@ -4,6 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
 .home-page {
@@ -17,19 +21,53 @@
   align-items: center;
   justify-content: flex-start;
   gap: 5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    overflow: scroll;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 10vh;
+    width: 100%;
+    flex-direction: row;
+    order: 2;
+    padding: 0;
+    gap: 0;
+    justify-content: space-around;
+  }
 }
 
-// maybe temp
 .link-page {
   height: 5rem;
   width: 100%;
+  text-decoration: none;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 5rem;
+  }
 }
 
-.link-icon {
-  height: 4rem;
-  width: 4rem;
+.noMobile {
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+}
+
+.desc {
+  color: $color-black;
+  font-size: 1.5rem;
+  letter-spacing: 1.7px;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.1rem;
+    letter-spacing: 1.4px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
 }

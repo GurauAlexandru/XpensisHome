@@ -5,9 +5,12 @@ import { UserContext } from '../../context/user.context';
 import { Link, Outlet } from 'react-router-dom';
 
 import Button from '../../components/button/button.component';
+import Icon from '../../components/icon/icon.component';
 
 import overviewIcon from '../../assets/icons/overview.svg';
 import walletIcon from '../../assets/icons/wallet.svg';
+import pieChart from '../../assets/icons/pie-chart.svg';
+import logOut from '../../assets/icons/log-out.svg';
 
 const Home = () => {
   const { currentUser, logout } = useContext(UserContext);
@@ -15,15 +18,22 @@ const Home = () => {
   return (
     <div className='home-setup'>
       <main className='home-page'>
-        <h3 className='header h-normal'>{currentUser.name}</h3>
+        <h3 className='header h-normal noMobile'>{currentUser.name}</h3>
         <Link to='/' className='link-page'>
-          <img className='link-icon' src={overviewIcon} alt='overview icon' />
+          <Icon src={overviewIcon} alt='overview icon' />
+          <p className='desc'>Overview</p>
+        </Link>
+        <Link to='/details' className='link-page'>
+          <Icon src={pieChart} alt='pie chart icon' />
+          <p className='desc'>Account details</p>
         </Link>
         <Link to='/budget' className='link-page'>
-          <img className='link-icon' src={walletIcon} alt='wallet icon' />
+          <Icon src={walletIcon} alt='wallet icon' />
+          <p className='desc'>Budget</p>
         </Link>
-        <Button className='button button__normal' onClick={() => logout()}>
-          Logout
+        <Button className='button button__logout' onClick={() => logout()}>
+          <Icon src={logOut} alt='logout icon' />
+          <p className='desc'>Logout</p>
         </Button>
       </main>
       <Outlet />
