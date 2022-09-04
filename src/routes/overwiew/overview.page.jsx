@@ -7,7 +7,12 @@ const Overview = () => {
     <div className='body-container overview'>
       <Bar header='Overview' />
 
-      <div className='cart'></div>
+      <div className='body-box'>
+        <div className='cart'>1</div>
+        <div className='cart'>2</div>
+        <div className='cart'>3</div>
+        <div className='cart'>4</div>
+      </div>
     </div>
   );
 };
