@@ -1,0 +1,29 @@
+@import '../../styles/styles';
+
+.cart-item__container {
+  height: 7rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--box {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &--others {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}

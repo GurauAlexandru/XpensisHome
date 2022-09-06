@@ -19,6 +19,7 @@ $color-green: #2a9d8f;
 $color-red: #e5383b;
 
 $color-white: white;
+$color-dark-gray: #adb5bd;
 $color-black: #000000;
 
 // Shadows
@@ -27,6 +28,11 @@ $color-black: #000000;
 .header {
   color: $color-primary;
   letter-spacing: 0.12rem;
+
+  span {
+    font-size: 2rem;
+    color: $color-dark-gray;
+  }
 }
 
 .h-big {
@@ -49,6 +55,18 @@ $color-black: #000000;
   font-size: 1.6rem;
   font-weight: 100;
 }
+.h-cart-huge {
+  font-size: 3rem;
+  color: $color-dark-gray;
+}
+.h-cart-big {
+  font-size: 1.8rem;
+  color: $color-dark-gray;
+}
+.h-cart-normal {
+  font-size: 1.3rem;
+  color: $color-dark-gray;
+}
 
 // Paragraphs
 
@@ -61,6 +79,15 @@ $color-black: #000000;
 
 .color-white {
   color: $color-white;
+}
+.color-green {
+  color: $color-green;
+}
+.color-red {
+  color: $color-red;
+}
+.color-gray {
+  color: $color-dark-gray;
 }
 
 // Budys

@@ -1,0 +1,21 @@
+@import '../../styles/styles';
+
+.cart-item {
+  width: 25rem;
+  min-height: 30rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba($color-primary, 0.1);
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media only screen and (max-width: $bp-small) {
+    height: 25rem;
+  }
+}

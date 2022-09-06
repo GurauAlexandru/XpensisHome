@@ -1,0 +1,58 @@
+@import '../../styles/styles';
+
+.cart-item__bar {
+  height: 3rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &--income {
+    height: 100%;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--progress {
+      height: 1rem;
+      width: 100%;
+      background-color: $color-green;
+    }
+  }
+
+  &--outcome {
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--progress {
+      height: 1rem;
+      width: 100%;
+      background-color: $color-red;
+    }
+  }
+
+  &--others {
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--progress {
+      height: 1rem;
+      width: 100%;
+      background-color: $color-dark-gray;
+    }
+  }
+}
