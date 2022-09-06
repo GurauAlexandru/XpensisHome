@@ -7,7 +7,13 @@ import CartItemMonth from '../../components/cartItem-month/cart-item-month.compo
 import CartItemBar from '../../components/cartItem-bar/cart-item-bar.component';
 import CartItemBalance from '../../components/cartItem-balance/cart-item-balance.component';
 
+import { useContext } from 'react';
+import { UserContext } from '../../context/user.context';
+
 const Overview = () => {
+  const { salary, otherIncome, totalBills, outherOutcome } =
+    useContext(UserContext);
+
   return (
     <div className='body-container overview'>
       <Bar header='Overview' />
@@ -19,10 +25,10 @@ const Overview = () => {
           balance={<CartItemBalance totalBalance='22.500,00' currency='RON' />}
           children={
             <CartItemContainer
-              salary='10.500,00'
-              otherIncome='0'
-              bills='3.000,00'
-              otherOutcome='50,00'
+              salary={salary}
+              otherIncome={otherIncome}
+              bills={totalBills}
+              otherOutcome={outherOutcome}
               currency='RON'
             />
           }
