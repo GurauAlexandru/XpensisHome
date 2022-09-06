@@ -2,7 +2,7 @@
 
 .cart-item {
   width: 25rem;
-  min-height: 30rem;
+  min-height: 35rem;
   background-color: white;
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgba($color-primary, 0.1);
@@ -15,7 +15,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  @media only screen and (max-width: $bp-small) {
-    height: 25rem;
+  @media only screen and (max-width: $bp-medium) {
+    width: 30rem;
   }
 }
