@@ -62,7 +62,7 @@ const users = [
       2022: {
         august: {
           income: {
-            salary: 3000,
+            salary: 8000,
             others: [500],
           },
           outcome: {

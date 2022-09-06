@@ -11,8 +11,9 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const Overview = () => {
-  const { salary, otherIncome, totalBills, outherOutcome } =
-    useContext(UserContext);
+  const { accountDetails } = useContext(UserContext);
+  // const { salary, otherIncome, totalBills, outherOutcome } =
+  //   useContext(UserContext);
 
   return (
     <div className='body-container overview'>
@@ -25,10 +26,10 @@ const Overview = () => {
           balance={<CartItemBalance totalBalance='22.500,00' currency='RON' />}
           children={
             <CartItemContainer
-              salary={salary}
-              otherIncome={otherIncome}
-              bills={totalBills}
-              otherOutcome={outherOutcome}
+              salary={accountDetails().salary.toFixed(2)}
+              otherIncome={accountDetails().otherIncome.toFixed(2)}
+              bills={accountDetails().totalBills.toFixed(2)}
+              otherOutcome={accountDetails().outherOutcome.toFixed(2)}
               currency='RON'
             />
           }
@@ -41,3 +42,7 @@ const Overview = () => {
 };
 
 export default Overview;
+
+/**
+ * make numbers to show comma and period
+ */
