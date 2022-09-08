@@ -6,48 +6,6 @@ export const alexandruDB = {
   password: 'parola',
   avatar: avatarAlex,
   year: {
-    2021: {
-      august: {
-        income: {
-          salary: 5600,
-          others: [],
-        },
-        outcome: {
-          bills: {
-            electricity: 50,
-            gaz: 150,
-            morgage: 120,
-            rent: 160,
-            tv: 39,
-            internet: 29,
-            phone: 25,
-            bank: 865,
-            fuel: 500,
-          },
-          others: [800],
-        },
-      },
-      iulie: {
-        income: {
-          salary: 4400,
-          others: [200, 500],
-        },
-        outcome: {
-          bills: {
-            electricity: 60,
-            gaz: 130,
-            morgage: 120,
-            rent: 150,
-            tv: 39,
-            internet: 29,
-            phone: 25,
-            bank: 865,
-            fuel: 500,
-          },
-          others: [],
-        },
-      },
-    },
     2022: {
       august: {
         income: {
@@ -127,6 +85,49 @@ export const alexandruDB = {
             fuel: 500,
           },
           others: [1200],
+        },
+      },
+    },
+
+    2021: {
+      august: {
+        income: {
+          salary: 5600,
+          others: [],
+        },
+        outcome: {
+          bills: {
+            electricity: 50,
+            gaz: 150,
+            morgage: 120,
+            rent: 160,
+            tv: 39,
+            internet: 29,
+            phone: 25,
+            bank: 865,
+            fuel: 500,
+          },
+          others: [800],
+        },
+      },
+      iulie: {
+        income: {
+          salary: 4400,
+          others: [200, 500],
+        },
+        outcome: {
+          bills: {
+            electricity: 60,
+            gaz: 130,
+            morgage: 120,
+            rent: 150,
+            tv: 39,
+            internet: 29,
+            phone: 25,
+            bank: 865,
+            fuel: 500,
+          },
+          others: [],
         },
       },
     },

@@ -15,6 +15,8 @@ const Overview = () => {
   // const { salary, otherIncome, totalBills, outherOutcome } =
   //   useContext(UserContext);
 
+  if (!accountDetails().salary) return;
+
   return (
     <div className='body-container overview'>
       <Bar header='Overview' />
