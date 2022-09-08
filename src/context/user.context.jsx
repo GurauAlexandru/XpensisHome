@@ -3,7 +3,6 @@ import { createContext, useState } from 'react';
 // import users from '../store/users'; //temp
 
 const currentYear = new Date().getFullYear();
-// const currentMonth = new Date().getMonth();
 
 /**
  * swith case || useReducer hook // for months
@@ -39,7 +38,18 @@ export const UserProvider = ({ children }) => {
     );
     const totalBalance = salary + otherIncome - (totalBills + outherOutcome);
 
-    return { salary, otherIncome, totalBills, outherOutcome, totalBalance };
+    // temp
+    const currentMonth = currentUser?.year[year];
+    const allMonths = Object.keys(currentMonth);
+
+    return {
+      salary,
+      otherIncome,
+      totalBills,
+      outherOutcome,
+      totalBalance,
+      allMonths,
+    };
   };
 
   const logout = () => {

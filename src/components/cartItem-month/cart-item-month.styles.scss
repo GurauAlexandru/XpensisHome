@@ -7,3 +7,12 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.month-options {
+  padding: 0.5rem;
+  border: none;
+}
+
+.month-options:focus {
+  outline: none;
+}

@@ -10,8 +10,8 @@ const users = [
       2022: {
         august: {
           income: {
-            salary: 5000,
-            others: [500, 150],
+            salary: 9600,
+            others: [],
           },
           outcome: {
             bills: {
@@ -25,13 +25,13 @@ const users = [
               bank: 865,
               fuel: 500,
             },
-            others: [1500, 200],
+            others: [1500, 800],
           },
         },
         iulie: {
           income: {
-            salary: 6000,
-            others: [200],
+            salary: 94000,
+            others: [200, 50],
           },
           outcome: {
             bills: {
@@ -45,11 +45,48 @@ const users = [
               bank: 865,
               fuel: 500,
             },
-            others: [1500],
+            others: [1500, 300],
           },
         },
-        september: {
-          salary: 5200,
+        iunie: {
+          income: {
+            salary: 9000,
+            others: [],
+          },
+          outcome: {
+            bills: {
+              electricity: 60,
+              gaz: 130,
+              morgage: 120,
+              rent: 150,
+              tv: 39,
+              internet: 29,
+              phone: 25,
+              bank: 865,
+              fuel: 500,
+            },
+            others: [3000],
+          },
+        },
+        mai: {
+          income: {
+            salary: 93000,
+            others: [],
+          },
+          outcome: {
+            bills: {
+              electricity: 60,
+              gaz: 130,
+              morgage: 120,
+              rent: 150,
+              tv: 39,
+              internet: 29,
+              phone: 25,
+              bank: 865,
+              fuel: 500,
+            },
+            others: [1200],
+          },
         },
       },
     },
@@ -62,8 +99,8 @@ const users = [
       2022: {
         august: {
           income: {
-            salary: 8000,
-            others: [500],
+            salary: 8600,
+            others: [300],
           },
           outcome: {
             bills: {
@@ -77,13 +114,13 @@ const users = [
               bank: 865,
               fuel: 500,
             },
-            others: [1500, 200],
+            others: [800],
           },
         },
         iulie: {
           income: {
-            salary: 6000,
-            others: [200],
+            salary: 9400,
+            others: [200, 50],
           },
           outcome: {
             bills: {
@@ -97,11 +134,8 @@ const users = [
               bank: 865,
               fuel: 500,
             },
-            others: [1500],
+            others: [1500, 300],
           },
-        },
-        september: {
-          salary: 5200,
         },
       },
     },
