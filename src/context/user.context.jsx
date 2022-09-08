@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear();
 export const UserContext = createContext({
   currentUser: null,
   setCurrentUser: () => {},
-  year: null,
+  year: '',
   setYear: () => {},
   month: '',
   setMonth: () => {},
@@ -38,9 +38,11 @@ export const UserProvider = ({ children }) => {
     );
     const totalBalance = salary + otherIncome - (totalBills + outherOutcome);
 
-    // temp
     const currentMonth = currentUser?.year[year];
     const allMonths = Object.keys(currentMonth);
+
+    const currentYear = currentUser.year;
+    const allYears = Object.keys(currentYear);
 
     return {
       salary,
@@ -49,6 +51,7 @@ export const UserProvider = ({ children }) => {
       outherOutcome,
       totalBalance,
       allMonths,
+      allYears,
     };
   };
 
