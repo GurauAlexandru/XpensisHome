@@ -1,10 +1,6 @@
 import { createContext, useState } from 'react';
 
-import users from '../store/users'; //temp
-
-/**
- * swith case || useReducer hook // for months
- */
+// import users from '../store/users'; //temp
 
 export const UserContext = createContext({
   currentUser: null,
@@ -19,7 +15,7 @@ export const UserProvider = ({ children }) => {
   const currentYear = new Date().getFullYear();
   const currentMonth = 'august';
 
-  const [currentUser, setCurrentUser] = useState(users[0]);
+  const [currentUser, setCurrentUser] = useState(null);
   const [year, setYear] = useState(currentYear);
   const [month, setMonth] = useState(currentMonth);
 
@@ -31,7 +27,10 @@ export const UserProvider = ({ children }) => {
     const allMonths = Object.keys(currentMonth);
 
     const currentData = currentUser?.year[year][month];
-    const salary = currentData?.income.salary;
+    const salary = currentData?.income.salary.reduce(
+      (cur, acc) => cur + acc,
+      0
+    );
     const otherIncome = currentData?.income.others.reduce(
       (cur, acc) => cur + acc,
       0

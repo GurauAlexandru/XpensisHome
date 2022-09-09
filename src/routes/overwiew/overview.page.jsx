@@ -11,12 +11,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const Overview = () => {
-  const { accountDetails, setYear, currentYear } = useContext(UserContext);
-
-  if (!accountDetails()) {
-    setYear(currentYear);
-    return;
-  }
+  const { accountDetails } = useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome } = accountDetails();
 
@@ -31,11 +26,13 @@ const Overview = () => {
           balance={<CartItemBalance totalBalance='22.500,00' currency='RON' />}
           children={
             <CartItemContainer
-              salary={salary.toFixed(2)}
-              otherIncome={otherIncome.toFixed(2)}
-              bills={totalBills.toFixed(2)}
-              otherOutcome={outherOutcome.toFixed(2)}
-              currency='RON'
+              salary={salary ? salary.toFixed(2) : 'no data'}
+              otherIncome={otherIncome ? otherIncome.toFixed(2) : 'no data'}
+              bills={totalBills ? totalBills.toFixed(2) : 'no data'}
+              otherOutcome={
+                outherOutcome ? outherOutcome.toFixed(2) : 'no data'
+              }
+              currency={'RON'}
             />
           }
           bar={<CartItemBar />}

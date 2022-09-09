@@ -4,19 +4,18 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const CartItemMonth = () => {
-  const { setMonth, setYear, accountDetails, currentMonth } =
-    useContext(UserContext);
+  const { setMonth, setYear, accountDetails } = useContext(UserContext);
 
-  const { allMonths } = accountDetails();
+  const { allMonths, allYears } = accountDetails();
 
   const handleSelectMonth = (e) => {
     setMonth(e.target.value);
   };
+
   const handleSelectYear = (e) => {
     setYear(e.target.value);
-    setMonth(currentMonth);
-
-    return allMonths[0];
+    // setMonth(currentMonth); // this must be trigged only when no mounth is found
+    // return [allMonths];
   };
 
   return (
@@ -29,13 +28,20 @@ const CartItemMonth = () => {
                   {el}
                 </option>
               ))
-            : currentMonth}
+            : allMonths[0]}
         </select>
       </h3>
       <h3 className='header h-cart-huge'>
         <select className='year-options' onChange={handleSelectYear}>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
+          {allYears
+            .map((el) => {
+              return (
+                <option key={el} value={el}>
+                  {el}
+                </option>
+              );
+            })
+            .reverse()}
         </select>
       </h3>
     </div>
@@ -43,9 +49,3 @@ const CartItemMonth = () => {
 };
 
 export default CartItemMonth;
-
-/**
- * fixing auto select current year
- * fixing missing months || when select a year change to first month in array
- * one fix can be to create an outside const who can keep default satus and when month or year is changed call default status
- */

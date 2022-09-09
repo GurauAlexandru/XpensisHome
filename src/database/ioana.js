@@ -6,7 +6,7 @@ export const ioanaDB = {
     2022: {
       august: {
         income: {
-          salary: 8600,
+          salary: [8600],
           others: [300],
         },
         outcome: {
@@ -26,7 +26,7 @@ export const ioanaDB = {
       },
       iulie: {
         income: {
-          salary: 9400,
+          salary: [9400],
           others: [200, 50],
         },
         outcome: {
