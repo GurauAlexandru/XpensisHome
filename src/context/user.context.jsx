@@ -36,17 +36,19 @@ export const UserProvider = ({ children }) => {
       0
     );
     const allBills = currentData?.outcome.bills;
-    if (!currentData) {
-      setMonth(currentMonth);
-      return;
-    }
     const allBillsValues = Object.values(allBills);
     const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
     const outherOutcome = currentData?.outcome.others.reduce(
       (cur, acc) => cur + acc,
       0
     );
-    const totalBalance = salary + otherIncome - (totalBills + outherOutcome);
+    const totalIncome = salary + otherIncome;
+    const totalOutcome = totalBills + outherOutcome;
+    const totalBalance = totalIncome - totalOutcome;
+    const totalMoney = totalIncome + totalOutcome;
+
+    const myIncomePercentage = (totalIncome * 100) / totalMoney;
+    const myOutcomePercentage = (totalOutcome * 100) / totalMoney;
 
     return {
       salary,
@@ -56,6 +58,8 @@ export const UserProvider = ({ children }) => {
       totalBalance,
       allMonths,
       allYears,
+      myIncomePercentage,
+      myOutcomePercentage,
     };
   };
 

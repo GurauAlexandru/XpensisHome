@@ -9,22 +9,22 @@ export const alexandruDB = {
     2022: {
       august: {
         income: {
-          salary: [8022],
+          salary: [1000],
           others: [],
         },
         outcome: {
           bills: {
             electricity: 50,
             gaz: 150,
-            morgage: 120,
-            rent: 160,
-            tv: 39,
-            internet: 29,
-            phone: 25,
-            bank: 865,
+            morgage: 100,
+            rent: 100,
+            tv: 50,
+            internet: 50,
+            phone: 50,
+            bank: 800,
             fuel: 500,
           },
-          others: [1500, 800],
+          others: [1500],
         },
       },
       iulie: {
@@ -153,7 +153,7 @@ export const alexandruDB = {
       iulie: {
         income: {
           salary: [7021],
-          others: [200, 500],
+          others: [],
         },
         outcome: {
           bills: {
