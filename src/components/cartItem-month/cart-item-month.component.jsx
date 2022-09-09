@@ -14,8 +14,6 @@ const CartItemMonth = () => {
 
   const handleSelectYear = (e) => {
     setYear(e.target.value);
-    // setMonth(currentMonth); // this must be trigged only when no mounth is found
-    // return [allMonths];
   };
 
   return (

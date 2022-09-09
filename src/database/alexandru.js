@@ -87,6 +87,46 @@ export const alexandruDB = {
           others: [1200],
         },
       },
+      aprilie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      martie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      februarie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      ianuarie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
     },
 
     2021: {
@@ -141,6 +181,46 @@ export const alexandruDB = {
         },
       },
       mai: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      aprilie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      martie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      februarie: {
+        income: {
+          salary: [],
+          others: [],
+        },
+        outcome: {
+          bills: [],
+          others: [],
+        },
+      },
+      ianuarie: {
         income: {
           salary: [],
           others: [],
