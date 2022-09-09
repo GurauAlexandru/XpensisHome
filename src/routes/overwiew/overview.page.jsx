@@ -26,11 +26,13 @@ const Overview = () => {
           balance={<CartItemBalance totalBalance='22.500,00' currency='RON' />}
           children={
             <CartItemContainer
-              salary={salary ? salary.toFixed(2) : 'no data'}
-              otherIncome={otherIncome ? otherIncome.toFixed(2) : 'no data'}
-              bills={totalBills ? totalBills.toFixed(2) : 'no data'}
+              salary={salary ? salary.toLocaleString('RO-ro') : '0'}
+              otherIncome={
+                otherIncome ? otherIncome.toLocaleString('RO-ro') : '0'
+              }
+              bills={totalBills ? totalBills.toLocaleString('RO-ro') : '0'}
               otherOutcome={
-                outherOutcome ? outherOutcome.toFixed(2) : 'no data'
+                outherOutcome ? outherOutcome.toLocaleString('RO-ro') : '0'
               }
               currency={'RON'}
             />
@@ -44,7 +46,3 @@ const Overview = () => {
 };
 
 export default Overview;
-
-/**
- * make numbers to show comma and period
- */
