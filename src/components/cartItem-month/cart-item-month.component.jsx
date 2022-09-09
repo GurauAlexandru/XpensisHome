@@ -4,28 +4,32 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const CartItemMonth = () => {
-  const { setMonth, setYear, accountDetails } = useContext(UserContext);
+  const { setMonth, setYear, accountDetails, currentMonth } =
+    useContext(UserContext);
 
-  const months = accountDetails().allMonths;
+  const { allMonths } = accountDetails();
 
   const handleSelectMonth = (e) => {
     setMonth(e.target.value);
   };
   const handleSelectYear = (e) => {
     setYear(e.target.value);
+    setMonth(currentMonth);
+
+    return allMonths[0];
   };
 
   return (
     <div className='cart-item__month'>
       <h3 className='header h-small'>
         <select className='month-options' onChange={handleSelectMonth}>
-          {months
-            ? months.map((el) => (
+          {allMonths
+            ? allMonths.map((el) => (
                 <option key={el} value={el}>
                   {el}
                 </option>
               ))
-            : 'august'}
+            : currentMonth}
         </select>
       </h3>
       <h3 className='header h-cart-huge'>

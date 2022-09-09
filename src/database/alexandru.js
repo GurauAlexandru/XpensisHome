@@ -9,7 +9,7 @@ export const alexandruDB = {
     2022: {
       august: {
         income: {
-          salary: 9600,
+          salary: 8022,
           others: [],
         },
         outcome: {
@@ -29,7 +29,7 @@ export const alexandruDB = {
       },
       iulie: {
         income: {
-          salary: 9400,
+          salary: 7022,
           others: [200, 50],
         },
         outcome: {
@@ -49,7 +49,7 @@ export const alexandruDB = {
       },
       iunie: {
         income: {
-          salary: 9000,
+          salary: 6022,
           others: [],
         },
         outcome: {
@@ -69,7 +69,7 @@ export const alexandruDB = {
       },
       mai: {
         income: {
-          salary: 9000,
+          salary: 5022,
           others: [],
         },
         outcome: {
@@ -92,7 +92,7 @@ export const alexandruDB = {
     2021: {
       august: {
         income: {
-          salary: 5600,
+          salary: 8021,
           others: [],
         },
         outcome: {
@@ -112,7 +112,7 @@ export const alexandruDB = {
       },
       iulie: {
         income: {
-          salary: 4400,
+          salary: 7021,
           others: [200, 500],
         },
         outcome: {

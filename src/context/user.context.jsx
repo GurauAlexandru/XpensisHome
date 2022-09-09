@@ -17,13 +17,19 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
   const currentYear = new Date().getFullYear();
-  const currendMonth = 'august';
+  const currentMonth = 'august';
 
   const [currentUser, setCurrentUser] = useState(users[0]);
   const [year, setYear] = useState(currentYear);
-  const [month, setMonth] = useState(currendMonth);
+  const [month, setMonth] = useState(currentMonth);
 
   const accountDetails = () => {
+    const curYear = currentUser.year;
+    const allYears = Object.keys(curYear);
+
+    const currentMonth = currentUser?.year[year];
+    const allMonths = Object.keys(currentMonth);
+
     const currentData = currentUser?.year[year][month];
     const salary = currentData?.income.salary;
     const otherIncome = currentData?.income.others.reduce(
@@ -31,9 +37,9 @@ export const UserProvider = ({ children }) => {
       0
     );
     const allBills = currentData?.outcome.bills;
-    if (!allBills) {
-      alert('No data found');
-      return setMonth(currendMonth);
+    if (!currentData) {
+      setMonth(currentMonth);
+      return;
     }
     const allBillsValues = Object.values(allBills);
     const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
@@ -42,12 +48,6 @@ export const UserProvider = ({ children }) => {
       0
     );
     const totalBalance = salary + otherIncome - (totalBills + outherOutcome);
-
-    const currentMonth = currentUser?.year[year];
-    const allMonths = Object.keys(currentMonth);
-
-    const currentYear = currentUser.year;
-    const allYears = Object.keys(currentYear);
 
     return {
       salary,
@@ -73,6 +73,8 @@ export const UserProvider = ({ children }) => {
     setMonth,
     logout,
     accountDetails,
+    currentYear,
+    currentMonth,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
