@@ -32,12 +32,17 @@
     overflow: scroll;
   }
   @media only screen and (max-width: $bp-small) {
-    height: 10rem;
+    height: auto;
     width: 100%;
     flex-direction: row;
     padding: 0 1rem;
+    margin: 1rem 0;
     order: 2;
     justify-content: center;
+
+    // delete is no work
+    position: fixed;
+    bottom: 0;
   }
 }
 
