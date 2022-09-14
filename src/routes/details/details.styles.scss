@@ -32,6 +32,7 @@
     &--summary {
       width: 30%;
       height: 100%;
+      overflow: scroll;
 
       display: flex;
       flex-direction: column;
