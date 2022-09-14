@@ -13,7 +13,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
+
+  height: 100%;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  height: stretch;
 }
 
 body {
@@ -24,8 +28,8 @@ body {
 
   line-height: 1.75;
 
-  height: 100vh;
-  height: -webkit-fill-available;
-  // @media only screen and (max-width: $bp-small) {
-  // }
+  height: 100%;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  height: stretch;
 }
