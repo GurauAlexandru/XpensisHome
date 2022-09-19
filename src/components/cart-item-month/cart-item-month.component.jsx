@@ -1,8 +1,7 @@
 import './cart-item-month.styles.scss';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
-import { useEffect } from 'react';
 
 const CartItemMonth = () => {
   const { setMonth, setYear, accountDetails, month, year } =

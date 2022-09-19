@@ -1,6 +1,6 @@
 import './bar.styles.scss';
 
-import CartItemMonth from '../../components/cartItem-month/cart-item-month.component';
+import CartItemMonth from '../cart-item-month/cart-item-month.component';
 
 import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
