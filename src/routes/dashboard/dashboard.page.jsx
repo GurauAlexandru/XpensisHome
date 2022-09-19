@@ -1,4 +1,4 @@
-import './overview.styles.scss';
+import './dashboard.styles.scss';
 
 import Bar from '../../components/bar/bar.component';
 import CartItem from '../../components/cart-item/cart-item.component';
@@ -9,14 +9,14 @@ import CartItemBalance from '../../components/cart-item-balance/cart-item-balanc
 import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
-const Overview = () => {
+const Dashboard = () => {
   const { accountDetails } = useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome } = accountDetails();
 
   return (
     <div className='body-container overview'>
-      <Bar header='Overview' />
+      <Bar header='Dashboard' />
 
       <div className='body-box'>
         <CartItem
@@ -43,4 +43,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default Dashboard;

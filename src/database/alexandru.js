@@ -55,14 +55,12 @@ export const alexandruDB = {
         outcome: {
           bills: {
             electricity: 60,
-            gaz: 130,
             morgage: 120,
             rent: 150,
             tv: 39,
             internet: 29,
             phone: 25,
             bank: 865,
-            fuel: 500,
           },
           others: [3000],
         },

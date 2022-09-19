@@ -1,22 +1,37 @@
 import './details.styles.scss';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import Bar from '../../components/bar/bar.component';
 import SummaryBox from '../../components/summary-box/summary-box.component';
+import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
-  const { accountDetails } = useContext(UserContext);
+  const [data, setData] = useState(true);
+  const { accountDetails, currentUser, year, month } = useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome, totalBalance } =
     accountDetails();
+
+  const bills = currentUser?.year[year][month].outcome.bills;
+  const billsName = Object.keys(bills);
+
+  useEffect(() => {
+    if (billsName.length === 0) setData(false);
+    if (billsName.length > 0) setData(true);
+  }, [month, year]);
+
+  // billsName.forEach((el) => console.log(el));
 
   return (
     <section className='body-container account-details'>
       <Bar header='Account details' />
       <div className='account-details__container'>
-        <div className='account-details__container--main'></div>
+        <div className='account-details__container--main'>
+          <h3 className='header h-large'>Monthly bills</h3>
+          {data === false ? <NoData /> : <p>Fill with data</p>}
+        </div>
         <div className='account-details__container--summary'>
           <h3 className='header h-normal'>Summary</h3>
           <SummaryBox

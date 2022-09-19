@@ -36,9 +36,9 @@ const Home = () => {
         <Link to='/' className='link-page' onClick={handleClick}>
           <Icon
             src={myPath === '/' ? menuIconFull : menuIcon}
-            alt='overview icon'
+            alt='dashboard icon'
           />
-          <p className='desc'>Overview</p>
+          <p className='desc'>Dashboard</p>
         </Link>
         <Link to='/details' className='link-page' onClick={handleClick}>
           <Icon

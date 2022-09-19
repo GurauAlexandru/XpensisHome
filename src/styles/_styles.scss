@@ -44,9 +44,17 @@ $color-black: #000000;
 }
 .h-large {
   font-size: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.8rem;
+  }
 }
 .h-normal {
   font-size: 2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.5rem;
+  }
 }
 .h-small {
   font-size: 1.5rem;
