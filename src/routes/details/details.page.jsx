@@ -20,9 +20,7 @@ const AccountDetails = () => {
   useEffect(() => {
     if (billsName.length === 0) setData(false);
     if (billsName.length > 0) setData(true);
-  }, [month, year]);
-
-  // billsName.forEach((el) => console.log(el));
+  }, [month, year, billsName]);
 
   return (
     <section className='body-container account-details'>
