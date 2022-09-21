@@ -5,6 +5,8 @@ import { UserContext } from '../../context/user.context';
 
 import Bar from '../../components/bar/bar.component';
 import SummaryBox from '../../components/summary-box/summary-box.component';
+import CartItemMonthlyIncome from '../../components/cart-item-monthly-income/cart-item-monthly-income.component';
+// import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
 import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
@@ -16,6 +18,9 @@ const AccountDetails = () => {
 
   const bills = currentUser?.year[year][month].outcome.bills;
   const billsName = Object.keys(bills);
+  // const billsValue = Object.values(bills);
+
+  const billsArray = Object.entries(bills);
 
   useEffect(() => {
     if (billsName.length === 0) setData(false);
@@ -28,7 +33,16 @@ const AccountDetails = () => {
       {data === true ? (
         <div className='account-details__container'>
           <div className='account-details__container--main'>
-            <h3 className='header h-large'>Monthly bills</h3>
+            <CartItemMonthlyIncome />
+            <h3 className='header h-large header-cart bk-red'>Bills</h3>
+            {billsArray.map((el) => {
+              return (
+                <p
+                  className='p-cart-item'
+                  key={el[0]}
+                >{`${el[0]}: ${el[1]}`}</p>
+              );
+            })}
           </div>
           <div className='account-details__container--summary'>
             <h3 className='header h-normal'>Summary</h3>

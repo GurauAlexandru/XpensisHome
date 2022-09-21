@@ -1,9 +1,9 @@
-import './cart-item-month.styles.scss';
+import './cart-item-date.styles.scss';
 
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
-const CartItemMonth = () => {
+const CartitemDate = () => {
   const { setMonth, setYear, accountDetails, month, year } =
     useContext(UserContext);
 
@@ -53,4 +53,4 @@ const CartItemMonth = () => {
   );
 };
 
-export default CartItemMonth;
+export default CartitemDate;

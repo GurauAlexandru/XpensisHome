@@ -76,7 +76,26 @@ $color-black: #000000;
   color: $color-dark-gray;
 }
 
+.header-cart {
+  border-radius: 5px;
+  width: fit-content;
+  padding: 0 1rem;
+}
+
+// Backgrounds
+.bk-green {
+  background-color: #d0f4de;
+}
+.bk-red {
+  background-color: #f28482;
+}
+
 // Paragraphs
+
+.p-cart-item {
+  padding-left: 1rem;
+  font-size: 1.6rem;
+}
 
 // Margins
 .mt-large {
