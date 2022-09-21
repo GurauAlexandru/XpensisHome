@@ -1,16 +1,18 @@
 @import '../../../styles/styles';
 
 .error-no-data {
-  width: 90%;
+  width: 100%;
   height: 100%;
+  padding: 10rem 5rem;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 
   @media only screen and (max-width: $bp-medium) {
     overflow: scroll;
+    padding: 2rem;
   }
 
   @media only screen and (max-width: $bp-small) {
@@ -18,16 +20,12 @@
   }
 
   &__wallpaper {
-    height: 30rem;
+    height: 50vh;
 
     align-self: center;
 
     @media only screen and (max-width: $bp-medium) {
-      height: 10rem;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      height: 30rem;
+      height: 35vh;
     }
   }
 }

@@ -25,41 +25,44 @@ const AccountDetails = () => {
   return (
     <section className='body-container account-details'>
       <Bar header='Account details' />
-      <div className='account-details__container'>
-        <div className='account-details__container--main'>
-          <h3 className='header h-large'>Monthly bills</h3>
-          {data === false ? <NoData /> : <p>Fill with data</p>}
+      {data === true ? (
+        <div className='account-details__container'>
+          <div className='account-details__container--main'>
+            <h3 className='header h-large'>Monthly bills</h3>
+          </div>
+          <div className='account-details__container--summary'>
+            <h3 className='header h-normal'>Summary</h3>
+            <SummaryBox
+              source='Income'
+              title='Salary'
+              mainMoney={salary.toLocaleString('RO-ro')}
+              subtitle='Other incomes'
+              secondMoney={otherIncome.toLocaleString('RO-ro')}
+              currency='RON'
+              color='color-green'
+              headerStyle='h-cart-big'
+            />
+            <SummaryBox
+              source='Outcome'
+              title='Bills'
+              mainMoney={totalBills.toLocaleString('RO-ro')}
+              subtitle='Other outcomes'
+              secondMoney={outherOutcome.toLocaleString('RO-ro')}
+              currency='RON'
+              headerStyle='h-cart-big'
+            />
+            <SummaryBox
+              source='Total balance'
+              mainMoney={totalBalance.toLocaleString('RO-ro')}
+              currency='RON'
+              secondColor='color-gray'
+              headerStyle='h-large'
+            />
+          </div>
         </div>
-        <div className='account-details__container--summary'>
-          <h3 className='header h-normal'>Summary</h3>
-          <SummaryBox
-            source='Income'
-            title='Salary'
-            mainMoney={salary.toLocaleString('RO-ro')}
-            subtitle='Other incomes'
-            secondMoney={otherIncome.toLocaleString('RO-ro')}
-            currency='RON'
-            color='color-green'
-            headerStyle='h-cart-big'
-          />
-          <SummaryBox
-            source='Outcome'
-            title='Bills'
-            mainMoney={totalBills.toLocaleString('RO-ro')}
-            subtitle='Other outcomes'
-            secondMoney={outherOutcome.toLocaleString('RO-ro')}
-            currency='RON'
-            headerStyle='h-cart-big'
-          />
-          <SummaryBox
-            source='Total balance'
-            mainMoney={totalBalance.toLocaleString('RO-ro')}
-            currency='RON'
-            secondColor='color-gray'
-            headerStyle='h-large'
-          />
-        </div>
-      </div>
+      ) : (
+        <NoData />
+      )}
     </section>
   );
 };
