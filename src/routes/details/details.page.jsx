@@ -1,31 +1,20 @@
 import './details.styles.scss';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import Bar from '../../components/bar/bar.component';
 import SummaryBox from '../../components/summary-box/summary-box.component';
 import CartItemMonthlyIncome from '../../components/cart-item-monthly-income/cart-item-monthly-income.component';
-// import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
+import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
 import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
-  const [data, setData] = useState(true);
-  const { accountDetails, currentUser, year, month } = useContext(UserContext);
+  const { accountDetails, currency, data, billsArray } =
+    useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome, totalBalance } =
     accountDetails();
-
-  const bills = currentUser?.year[year][month].outcome.bills;
-  const billsName = Object.keys(bills);
-  // const billsValue = Object.values(bills);
-
-  const billsArray = Object.entries(bills);
-
-  useEffect(() => {
-    if (billsName.length === 0) setData(false);
-    if (billsName.length > 0) setData(true);
-  }, [month, year, billsName]);
 
   return (
     <section className='body-container account-details'>
@@ -33,16 +22,8 @@ const AccountDetails = () => {
       {data === true ? (
         <div className='account-details__container'>
           <div className='account-details__container--main'>
-            <CartItemMonthlyIncome />
-            <h3 className='header h-large header-cart bk-red'>Bills</h3>
-            {billsArray.map((el) => {
-              return (
-                <p
-                  className='p-cart-item'
-                  key={el[0]}
-                >{`${el[0]}: ${el[1]}`}</p>
-              );
-            })}
+            <CartItemMonthlyIncome currency={currency} />
+            <CartItemMonthlyOutcome bills={billsArray} currency={currency} />
           </div>
           <div className='account-details__container--summary'>
             <h3 className='header h-normal'>Summary</h3>
@@ -52,7 +33,7 @@ const AccountDetails = () => {
               mainMoney={salary.toLocaleString('RO-ro')}
               subtitle='Other incomes'
               secondMoney={otherIncome.toLocaleString('RO-ro')}
-              currency='RON'
+              currency={currency}
               color='color-green'
               headerStyle='h-cart-big'
             />
@@ -62,13 +43,13 @@ const AccountDetails = () => {
               mainMoney={totalBills.toLocaleString('RO-ro')}
               subtitle='Other outcomes'
               secondMoney={outherOutcome.toLocaleString('RO-ro')}
-              currency='RON'
+              currency={currency}
               headerStyle='h-cart-big'
             />
             <SummaryBox
               source='Total balance'
               mainMoney={totalBalance.toLocaleString('RO-ro')}
-              currency='RON'
+              currency={currency}
               secondColor='color-gray'
               headerStyle='h-large'
             />

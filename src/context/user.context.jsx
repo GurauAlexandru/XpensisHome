@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 import users from '../store/users'; //temp
 
@@ -9,6 +9,10 @@ export const UserContext = createContext({
   setYear: () => {},
   month: '',
   setMonth: () => {},
+  currency: '',
+  setCurrency: () => {},
+  data: true,
+  setData: () => {},
 });
 
 export const UserProvider = ({ children }) => {
@@ -18,6 +22,17 @@ export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(users[0]);
   const [year, setYear] = useState(currentYear);
   const [month, setMonth] = useState(currentMonth);
+  const [currency, setCurrency] = useState('€');
+  const [data, setData] = useState(true);
+
+  const bills = currentUser?.year[year][month].outcome.bills;
+  const billsName = Object.keys(bills);
+  const billsArray = Object.entries(bills);
+
+  useEffect(() => {
+    if (billsName.length === 0) setData(false);
+    if (billsName.length > 0) setData(true);
+  }, [month, year, billsName]);
 
   const accountDetails = () => {
     const curYear = currentUser.year;
@@ -78,6 +93,11 @@ export const UserProvider = ({ children }) => {
     accountDetails,
     currentYear,
     currentMonth,
+    currency,
+    setCurrency,
+    data,
+    setData,
+    billsArray,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

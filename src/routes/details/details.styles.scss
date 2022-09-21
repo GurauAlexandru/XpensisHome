@@ -21,6 +21,10 @@
       border-right: 2px solid rgba($color-black, 0.3);
       order: 1;
 
+      @media only screen and (max-width: $bp-medium) {
+        overflow: scroll;
+      }
+
       @media only screen and (max-width: $bp-small) {
         order: 2;
         width: 100%;
@@ -28,11 +32,12 @@
         padding: 3rem 0;
         border-right: none;
         border-top: 2px solid rgba($color-black, 0.3);
+        overflow: visible;
 
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
       }
     }
     &--summary {

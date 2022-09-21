@@ -7,8 +7,8 @@ import { Link, Outlet } from 'react-router-dom';
 import Button from '../../components/button/button.component';
 import Icon from '../../components/icon/icon.component';
 
-import menuIcon from '../../assets/icons/menu.svg';
-import menuIconFull from '../../assets/icons/menu-full.svg';
+import menuIcon from '../../assets/icons/dashboard-empty.svg';
+import menuIconFull from '../../assets/icons/dashboard-full.svg';
 import walletIcon from '../../assets/icons/wallet.svg';
 import walletIconFull from '../../assets/icons/wallet-full.png';
 import pieChart from '../../assets/icons/pie-chart.svg';
@@ -38,25 +38,25 @@ const Home = () => {
             src={myPath === '/' ? menuIconFull : menuIcon}
             alt='dashboard icon'
           />
-          <p className='desc'>Dashboard</p>
+          {/* <p className='desc'>Dashboard</p> */}
         </Link>
         <Link to='/details' className='link-page' onClick={handleClick}>
           <Icon
             src={myPath === '/details' ? pieChartFull : pieChart}
             alt='pie chart icon'
           />
-          <p className='desc'>Account details</p>
+          {/* <p className='desc'>Account details</p> */}
         </Link>
         <Link to='/budget' className='link-page' onClick={handleClick}>
           <Icon
             src={myPath === '/budget' ? walletIconFull : walletIcon}
             alt='wallet icon'
           />
-          <p className='desc'>Budget</p>
+          {/* <p className='desc'>Budget</p> */}
         </Link>
         <Button className='button button__logout' onClick={() => logout()}>
           <Icon src={logOut} alt='logout icon' />
-          <p className='desc'>Logout</p>
+          {/* <p className='desc'>Logout</p> */}
         </Button>
       </main>
       <Outlet />
