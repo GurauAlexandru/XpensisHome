@@ -7,13 +7,22 @@ import CartItemBar from '../../components/cart-item-bar/cart-item-bar.component'
 import CartItemBalance from '../../components/cart-item-balance/cart-item-balance.component';
 import CartItemNoData from '../../components/cart-item-no-data/cart-item-no-data.component';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const Dashboard = () => {
-  const { accountDetails, currency, data } = useContext(UserContext);
+  const { accountDetails, currency, data, currentUser, year, month, setData } =
+    useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome } = accountDetails();
+
+  const bills = currentUser?.year[year][month].outcome.bills;
+  const billsName = Object.keys(bills);
+
+  useEffect(() => {
+    if (billsName.length === 0) setData(false);
+    if (billsName.length > 0) setData(true);
+  }, [month, year, billsName, setData]);
 
   return (
     <div className='body-container overview'>

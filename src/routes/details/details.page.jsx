@@ -1,6 +1,6 @@
 import './details.styles.scss';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import Bar from '../../components/bar/bar.component';
@@ -10,11 +10,20 @@ import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/c
 import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
-  const { accountDetails, currency, data, billsArray } =
+  const { accountDetails, currentUser, year, month, currency, data, setData } =
     useContext(UserContext);
 
   const { salary, otherIncome, totalBills, outherOutcome, totalBalance } =
     accountDetails();
+
+  const bills = currentUser?.year[year][month].outcome.bills;
+  const billsName = Object.keys(bills);
+  const billsArray = Object.entries(bills);
+
+  useEffect(() => {
+    if (billsName.length === 0) setData(false);
+    if (billsName.length > 0) setData(true);
+  }, [month, year, billsName, setData]);
 
   return (
     <section className='body-container account-details'>
