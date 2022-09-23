@@ -31,7 +31,11 @@ const AccountDetails = () => {
       {data === true ? (
         <div className='account-details__container'>
           <div className='account-details__container--main'>
-            <CartItemMonthlyIncome currency={currency} />
+            <CartItemMonthlyIncome
+              salary={salary}
+              others={otherIncome}
+              currency={currency}
+            />
             <CartItemMonthlyOutcome bills={billsArray} currency={currency} />
           </div>
           <div className='account-details__container--summary'>
