@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import Bar from '../../components/bar/bar.component';
-import SummaryBox from '../../components/summary-box/summary-box.component';
+
 import CartItemMonthlyIncome from '../../components/cart-item-monthly-income/cart-item-monthly-income.component';
 import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
 import NoData from '../../components/errors/data/error.data.component';
@@ -13,8 +13,14 @@ const AccountDetails = () => {
   const { accountDetails, currentUser, year, month, currency, data, setData } =
     useContext(UserContext);
 
-  const { salary, otherIncome, totalBills, outherOutcome, totalBalance } =
-    accountDetails();
+  const {
+    salary,
+    otherIncome,
+    totalBalance,
+    totalOutcome,
+    totalIncome,
+    otherOutcome,
+  } = accountDetails();
 
   const bills = currentUser?.year[year][month].outcome.bills;
   const billsName = Object.keys(bills);
@@ -29,45 +35,30 @@ const AccountDetails = () => {
     <section className='body-container account-details'>
       <Bar header='Account details' />
       {data === true ? (
-        <div className='account-details__container'>
-          <div className='account-details__container--main'>
-            <CartItemMonthlyIncome
-              salary={salary}
-              others={otherIncome}
-              currency={currency}
-            />
-            <CartItemMonthlyOutcome bills={billsArray} currency={currency} />
+        <>
+          <div className='account-details__container'>
+            <div className='account-details__container--main'>
+              <CartItemMonthlyIncome
+                salary={salary}
+                others={otherIncome}
+                totalIncome={totalIncome}
+                currency={currency}
+              />
+              <CartItemMonthlyOutcome
+                bills={billsArray}
+                currency={currency}
+                otherOutcome={otherOutcome}
+                totalOutcome={totalOutcome}
+              />
+            </div>
           </div>
-          <div className='account-details__container--summary'>
-            <h3 className='header h-normal'>Summary</h3>
-            <SummaryBox
-              source='Income'
-              title='Salary'
-              mainMoney={salary.toLocaleString('RO-ro')}
-              subtitle='Other incomes'
-              secondMoney={otherIncome.toLocaleString('RO-ro')}
-              currency={currency}
-              color='color-green'
-              headerStyle='h-cart-big'
-            />
-            <SummaryBox
-              source='Outcome'
-              title='Bills'
-              mainMoney={totalBills.toLocaleString('RO-ro')}
-              subtitle='Other outcomes'
-              secondMoney={outherOutcome.toLocaleString('RO-ro')}
-              currency={currency}
-              headerStyle='h-cart-big'
-            />
-            <SummaryBox
-              source='Total balance'
-              mainMoney={totalBalance.toLocaleString('RO-ro')}
-              currency={currency}
-              secondColor='color-gray'
-              headerStyle='h-large'
-            />
+          <div className='account-details__total'>
+            <h2 className='header h-large color-primary80'>
+              Total money left:
+            </h2>
+            <h2 className='header h-large color-primary80'>{` ${totalBalance} ${currency}`}</h2>
           </div>
-        </div>
+        </>
       ) : (
         <NoData />
       )}

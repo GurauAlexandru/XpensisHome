@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-import users from '../store/users'; //temp
+// import users from '../store/users'; //temp
 
 export const UserContext = createContext({
   currentUser: null,
@@ -19,11 +19,11 @@ export const UserProvider = ({ children }) => {
   const currentYear = new Date().getFullYear();
   const currentMonth = 'august';
 
-  const [currentUser, setCurrentUser] = useState(users[0]);
-  const [year, setYear] = useState(currentYear);
-  const [month, setMonth] = useState(currentMonth);
-  const [currency, setCurrency] = useState('€');
-  const [data, setData] = useState(true);
+  const [currentUser, setCurrentUser] = useState(() => null);
+  const [year, setYear] = useState(() => currentYear);
+  const [month, setMonth] = useState(() => currentMonth);
+  const [currency, setCurrency] = useState(() => '€');
+  const [data, setData] = useState(() => true);
 
   const accountDetails = () => {
     const curYear = currentUser.year;
@@ -44,12 +44,12 @@ export const UserProvider = ({ children }) => {
     const allBills = currentData?.outcome.bills;
     const allBillsValues = Object.values(allBills);
     const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
-    const outherOutcome = currentData?.outcome.others.reduce(
+    const otherOutcome = currentData?.outcome.others.reduce(
       (cur, acc) => cur + acc,
       0
     );
     const totalIncome = salary + otherIncome;
-    const totalOutcome = totalBills + outherOutcome;
+    const totalOutcome = totalBills + otherOutcome;
     const totalBalance = totalIncome - totalOutcome;
     const totalMoney = totalIncome + totalOutcome;
 
@@ -59,9 +59,11 @@ export const UserProvider = ({ children }) => {
     return {
       salary,
       otherIncome,
+      totalIncome,
       totalBills,
-      outherOutcome,
+      otherOutcome,
       totalBalance,
+      totalOutcome,
       allMonths,
       allYears,
       myIncomePercentage,
