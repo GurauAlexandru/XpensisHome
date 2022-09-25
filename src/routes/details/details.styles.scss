@@ -43,33 +43,13 @@
         align-items: center;
       }
     }
-    // &--summary {
-    //   // width: 30%;
-    //   // height: 100%;
-
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: flex-start;
-    //   align-items: center;
-    //   order: 2;
-
-    //   @media only screen and (max-width: $bp-medium) {
-    //     overflow: scroll;
-    //   }
-
-    //   @media only screen and (max-width: $bp-small) {
-    //     order: 1;
-    //     width: 100%;
-    //     height: auto;
-    //     overflow: unset;
-    //   }
-    // }
   }
 
   &__total {
     height: 20%;
     width: 100%;
     padding: 0 5rem;
+    margin-bottom: 5rem;
 
     display: flex;
     justify-content: flex-end;
