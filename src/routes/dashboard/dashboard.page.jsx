@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { accountDetails, currency, data, currentUser, year, month, setData } =
     useContext(UserContext);
 
-  const { salary, otherIncome, totalBills, outherOutcome } = accountDetails();
+  const { salary, otherIncome, totalBills, otherOutcome } = accountDetails();
 
   const bills = currentUser?.year[year][month].outcome.bills;
   const billsName = Object.keys(bills);
@@ -43,7 +43,7 @@ const Dashboard = () => {
                 }
                 bills={totalBills ? totalBills.toLocaleString('RO-ro') : '0'}
                 otherOutcome={
-                  outherOutcome ? outherOutcome.toLocaleString('RO-ro') : '0'
+                  otherOutcome ? otherOutcome.toLocaleString('RO-ro') : '0'
                 }
                 currency={currency}
               />
