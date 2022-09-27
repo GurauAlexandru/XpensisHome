@@ -1,6 +1,6 @@
 import './bar.styles.scss';
 
-import CartitemDate from '../cart-item-date/cart-item-date.component';
+import SelectTime from '../elements/select-time/select-time.component';
 
 import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
@@ -12,7 +12,7 @@ const Bar = ({ header }) => {
     <div className='bar'>
       <h2 className='header h-large'>{header}</h2>
       <div className='bar__time'>
-        <CartitemDate />
+        <SelectTime />
       </div>
       <div className='user'>
         {currentUser.avatar ? (

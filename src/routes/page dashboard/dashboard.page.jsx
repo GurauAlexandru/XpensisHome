@@ -1,10 +1,10 @@
 import './dashboard.styles.scss';
 
 import Bar from '../../components/bar/bar.component';
-import CartItem from '../../components/cart/cart-item/cart-item.component';
+import CartItem from '../../components/cart-item/cart-item.component';
 import CartItemContainer from '../../components/cart-item-container/cart-item-container.component';
-import CartStatusBar from '../../components/cart/cart-status-bar/cart-status-bar.component';
-import CartBalance from '../../components/cart/cart-balance/cart-balance.component';
+import CartItemBar from '../../components/cart/cart-status-bar/cart-status-bar.component';
+import CartItemBalance from '../../components/cart-item-balance/cart-item-balance.component';
 import CartItemNoData from '../../components/cart-item-no-data/cart-item-no-data.component';
 
 import { useContext, useEffect } from 'react';
@@ -33,7 +33,7 @@ const Dashboard = () => {
           <CartItem
             title='Account details'
             balance={
-              <CartBalance totalBalance='22.500,00' currency={currency} />
+              <CartItemBalance totalBalance='22.500,00' currency={currency} />
             }
             children={
               <CartItemContainer
@@ -48,7 +48,7 @@ const Dashboard = () => {
                 currency={currency}
               />
             }
-            bar={<CartStatusBar />}
+            bar={<CartItemBar />}
           />
         ) : (
           <CartItemNoData />

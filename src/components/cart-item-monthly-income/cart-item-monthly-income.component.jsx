@@ -1,4 +1,4 @@
-import './cart-item-monthly-income.styles.scss';
+import CartMonthlyTotal from '../cart/cart-monthly-total/cart-monthly-total.component';
 
 const CartItemMonthlyIncome = ({ salary, others, currency, totalIncome }) => (
   <section className='cart-item-monthly'>
@@ -17,10 +17,12 @@ const CartItemMonthlyIncome = ({ salary, others, currency, totalIncome }) => (
         </p>
       </div>
     </div>
-    <div className='cart-item-monthly__total'>
-      <p className='p-total'>{`Total income:`}</p>
-      <p className='p-total'>{`+${totalIncome} ${currency}`}</p>
-    </div>
+    <CartMonthlyTotal
+      total={totalIncome}
+      symbol={'+'}
+      currency={currency}
+      type='income'
+    />
   </section>
 );
 

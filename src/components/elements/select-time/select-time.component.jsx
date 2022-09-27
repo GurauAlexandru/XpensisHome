@@ -1,9 +1,9 @@
-import './cart-item-date.styles.scss';
+import './select-time.styles.scss';
 
 import { useContext, useEffect } from 'react';
-import { UserContext } from '../../context/user.context';
+import { UserContext } from '../../../context/user.context';
 
-const CartitemDate = () => {
+const SelectTime = () => {
   const { setMonth, setYear, accountDetails, month, year } =
     useContext(UserContext);
 
@@ -30,7 +30,7 @@ const CartitemDate = () => {
   };
 
   return (
-    <div className='cart-item__month'>
+    <div className='select-time'>
       <h3 className='header h-small'>
         <select className='month-options' onChange={handleSelectMonth}>
           {allMonths.map((el) => (
@@ -53,4 +53,4 @@ const CartitemDate = () => {
   );
 };
 
-export default CartitemDate;
+export default SelectTime;

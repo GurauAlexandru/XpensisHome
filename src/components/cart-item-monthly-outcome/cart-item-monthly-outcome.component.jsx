@@ -1,4 +1,4 @@
-import './cart-item-monthly-outcome.styles.scss';
+import CartMonthlyTotal from '../cart/cart-monthly-total/cart-monthly-total.component';
 
 const CartItemMonthlyOutcome = ({
   bills,
@@ -26,11 +26,12 @@ const CartItemMonthlyOutcome = ({
         </p>
       </div>
     </div>
-
-    <div className='cart-item-monthly__total'>
-      <p className='p-total'>{`Total outcome:`}</p>
-      <p className='p-total'>{`-${totalOutcome} ${currency}`}</p>
-    </div>
+    <CartMonthlyTotal
+      total={totalOutcome}
+      symbol={'-'}
+      currency={currency}
+      type='outcome'
+    />
   </section>
 );
 

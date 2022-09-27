@@ -1,6 +1,6 @@
-@import '../../styles/styles';
+@import '../../../styles/styles';
 
-.cart-item__bar {
+.cart-status-bar {
   height: 3rem;
   width: 100%;
 
@@ -10,7 +10,6 @@
 
   &--income {
     height: 100%;
-    // width: 40%;
 
     display: flex;
     flex-direction: column;
@@ -26,7 +25,6 @@
 
   &--outcome {
     height: 100%;
-    // width: 50%;
 
     display: flex;
     flex-direction: column;
@@ -42,7 +40,6 @@
 
   &--others {
     height: 100%;
-    // width: 10%;
 
     display: flex;
     flex-direction: column;

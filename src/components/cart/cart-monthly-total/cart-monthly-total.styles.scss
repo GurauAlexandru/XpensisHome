@@ -1,8 +1,8 @@
-@import '../../styles/styles';
+@import '../../../styles/styles';
 
-.cart-item__container {
-  height: 7rem;
+.cart-monthly-total {
   width: 100%;
+  padding: 0 2rem;
 
   display: flex;
   justify-content: space-between;
