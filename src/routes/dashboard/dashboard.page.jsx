@@ -56,7 +56,6 @@ const Dashboard = () => {
           <CartNoData />
         )}
         <CartItem title='Budget' children={<ChartBudgetpreview />} />
-        <CartItem />
       </div>
     </div>
   );
