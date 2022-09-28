@@ -7,6 +7,8 @@ import CartStatusBar from '../../components/cart/cart-status-bar/cart-status-bar
 import CartBalance from '../../components/cart/cart-balance/cart-balance.component';
 import CartNoData from '../../components/errors/cart-no-data/cart-no-data.component';
 
+import ChartBudgetpreview from '../../components/chart/chart-budget-preview/chart-budget-preview.component';
+
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
@@ -53,7 +55,7 @@ const Dashboard = () => {
         ) : (
           <CartNoData />
         )}
-        <CartItem />
+        <CartItem title='Budget' children={<ChartBudgetpreview />} />
         <CartItem />
       </div>
     </div>
