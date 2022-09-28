@@ -1,3 +1,4 @@
+import CartItemMonthly from '../cart-item-monthly/cart-item-monthly.component';
 import CartMonthlyTotal from '../cart-monthly-total/cart-monthly-total.component';
 
 const CartItemMonthlyOutcome = ({
@@ -6,7 +7,7 @@ const CartItemMonthlyOutcome = ({
   totalOutcome,
   otherOutcome,
 }) => (
-  <section className='cart-item-monthly'>
+  <CartItemMonthly>
     <div className='cart-item-monthly__box'>
       <h3 className='header h-large header-cart bk-red'>Bills</h3>
       {bills.map((el) => {
@@ -32,7 +33,7 @@ const CartItemMonthlyOutcome = ({
       currency={currency}
       type='outcome'
     />
-  </section>
+  </CartItemMonthly>
 );
 
 export default CartItemMonthlyOutcome;

@@ -1,0 +1,42 @@
+@import '../../../styles/styles';
+
+.cart-item-monthly {
+  min-height: 48rem;
+  width: 30rem;
+  border-radius: 5px;
+  padding: 0 1rem 2rem 1rem;
+  box-shadow: $shadow-cart;
+  background-color: white;
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  @media only screen and (max-width: $bp-small) {
+    align-items: center;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    height: auto;
+  }
+
+  &__box {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__total {
+    width: 100%;
+    padding: 0 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
