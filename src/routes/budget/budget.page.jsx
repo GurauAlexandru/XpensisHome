@@ -1,10 +1,10 @@
 import './budget.styles.scss';
 
-import Bar from '../../components/bar/bar.component';
+import Navigation from '../../components/navigation/navigation.component';
 
 const AccountBudget = () => (
   <div className='body-container account-budget'>
-    <Bar header='Bugdet' />
+    <Navigation header='Bugdet' />
   </div>
 );
 

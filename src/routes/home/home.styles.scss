@@ -17,8 +17,8 @@
 
 .home-page {
   height: 100vh;
-  width: 15vw;
-  border-right: 1px solid rgba($color-black, 0.1);
+  width: 10vw;
+  border-right: $border-black;
   padding: 5rem 0;
   background-color: $color-white;
 
@@ -39,6 +39,8 @@
     margin: 1rem 0 0 0;
     order: 2;
     justify-content: center;
+    border-right: none;
+    border-top: $border-black;
 
     position: fixed;
     bottom: 0;

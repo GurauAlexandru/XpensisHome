@@ -21,7 +21,7 @@
   &__picture {
     height: 100%;
     width: 50%;
-    border-right: 1px solid $color-black;
+    border-right: $border-black;
 
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-import CartMonthlyTotal from '../cart/cart-monthly-total/cart-monthly-total.component';
+import CartMonthlyTotal from '../cart-monthly-total/cart-monthly-total.component';
 
 const CartItemMonthlyIncome = ({ salary, others, currency, totalIncome }) => (
   <section className='cart-item-monthly'>
@@ -27,8 +27,3 @@ const CartItemMonthlyIncome = ({ salary, others, currency, totalIncome }) => (
 );
 
 export default CartItemMonthlyIncome;
-
-/**
- * cart-item-monthly__container -> to it's own component
- * maybe: cart-item-monthly -> to it's own component
- */

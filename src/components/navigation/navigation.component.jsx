@@ -1,17 +1,17 @@
-import './bar.styles.scss';
+import './navigation.styles.scss';
 
 import SelectTime from '../elements/select-time/select-time.component';
 
 import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
-const Bar = ({ header }) => {
+const Navigation = ({ header }) => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className='bar'>
+    <div className='navigation'>
       <h2 className='header h-large'>{header}</h2>
-      <div className='bar__time'>
+      <div className='navigation__time'>
         <SelectTime />
       </div>
       <div className='user'>
@@ -32,4 +32,4 @@ const Bar = ({ header }) => {
   );
 };
 
-export default Bar;
+export default Navigation;

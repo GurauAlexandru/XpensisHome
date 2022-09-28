@@ -5,7 +5,7 @@
   min-height: 35rem;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 1px 1px 10px rgba($color-primary, 0.1);
+  box-shadow: $shadow-cart;
   flex-grow: 1;
   flex-shrink: 0;
   padding: 2rem;

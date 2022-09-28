@@ -1,9 +1,9 @@
-import './cart-item-container.styles.scss';
+import './cart-container.styles.scss';
 import { Fragment } from 'react';
 
-import CartElement from '../cart/cart-element/cart-element.component';
+import CartElement from '../cart-element/cart-element.component';
 
-const CartItemContainer = ({
+const CartContainer = ({
   salary,
   otherIncome,
   bills,
@@ -37,4 +37,4 @@ const CartItemContainer = ({
   </Fragment>
 );
 
-export default CartItemContainer;
+export default CartContainer;

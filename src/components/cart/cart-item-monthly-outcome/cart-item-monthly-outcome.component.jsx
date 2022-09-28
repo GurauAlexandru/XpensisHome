@@ -1,4 +1,4 @@
-import CartMonthlyTotal from '../cart/cart-monthly-total/cart-monthly-total.component';
+import CartMonthlyTotal from '../cart-monthly-total/cart-monthly-total.component';
 
 const CartItemMonthlyOutcome = ({
   bills,

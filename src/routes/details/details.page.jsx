@@ -3,10 +3,9 @@ import './details.styles.scss';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
-import Bar from '../../components/bar/bar.component';
-
-import CartItemMonthlyIncome from '../../components/cart-item-monthly-income/cart-item-monthly-income.component';
-import CartItemMonthlyOutcome from '../../components/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
+import Navigation from '../../components/navigation/navigation.component';
+import CartItemMonthlyIncome from '../../components/cart/cart-item-monthly-income/cart-item-monthly-income.component';
+import CartItemMonthlyOutcome from '../../components/cart/cart-item-monthly-outcome/cart-item-monthly-outcome.component';
 import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
@@ -33,7 +32,7 @@ const AccountDetails = () => {
 
   return (
     <section className='body-container account-details'>
-      <Bar header='Account details' />
+      <Navigation header='Account details' />
       {data === true ? (
         <>
           <div className='account-details__container'>
