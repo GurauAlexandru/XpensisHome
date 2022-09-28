@@ -33,6 +33,10 @@ const AccountDetails = () => {
   return (
     <section className='body-container account-details'>
       <Navigation header='Account details' />
+      <div className='account-details__total'>
+        <h2 className='header h-large color-primary80'>Total money left:</h2>
+        <h2 className='header h-large color-primary80'>{` ${totalBalance} ${currency}`}</h2>
+      </div>
       {data === true ? (
         <>
           <div className='account-details__container'>
@@ -50,12 +54,6 @@ const AccountDetails = () => {
                 totalOutcome={totalOutcome}
               />
             </div>
-          </div>
-          <div className='account-details__total'>
-            <h2 className='header h-large color-primary80'>
-              Total money left:
-            </h2>
-            <h2 className='header h-large color-primary80'>{` ${totalBalance} ${currency}`}</h2>
           </div>
         </>
       ) : (

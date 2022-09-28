@@ -1,10 +1,9 @@
 @import '../../../styles/styles';
 
 .cart-item-monthly {
-  min-height: 48rem;
+  height: 50rem;
   width: 30rem;
   border-radius: 5px;
-  padding: 0 1rem 2rem 1rem;
   box-shadow: $shadow-cart;
   background-color: white;
   overflow: scroll;
