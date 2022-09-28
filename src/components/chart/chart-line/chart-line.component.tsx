@@ -76,7 +76,7 @@ const ChartLine = () => {
     datasets: [
       {
         fill: true,
-        label: 'last 5 years',
+        label: `${year}`,
         data: yearTotal,
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',

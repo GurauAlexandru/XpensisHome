@@ -86,12 +86,22 @@ export const ioanaDB = {
       },
       aprilie: {
         income: {
-          salary: [4300],
-          others: [],
+          salary: [4800],
+          others: [2299],
         },
         outcome: {
-          bills: [],
-          others: [],
+          bills: {
+            electricity: 30,
+            gaz: 180,
+            morgage: 120,
+            rent: 200,
+            tv: 19,
+            internet: 29,
+            phone: 25,
+            bank: 865,
+            fuel: 500,
+          },
+          others: [800],
         },
       },
       martie: {
