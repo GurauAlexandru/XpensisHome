@@ -22,7 +22,7 @@ const Modal = () => {
           Logout
         </Button>
         <Button className='button button__normal' onClick={() => closeModal()}>
-          Close
+          Go back
         </Button>
       </div>
     </section>
