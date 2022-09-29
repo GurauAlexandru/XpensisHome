@@ -23,7 +23,14 @@
   }
 
   &__img {
-    height: 35rem;
+    height: 45rem;
     width: auto;
+
+    @media only screen and (max-width: $bp-medium) {
+      height: 20rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      height: 35rem;
+    }
   }
 }
