@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-import users from '../store/users'; //temp
+// import users from '../store/users'; //temp
 
 export const UserContext = createContext({
   currentUser: null,
@@ -13,17 +13,20 @@ export const UserContext = createContext({
   setCurrency: () => {},
   data: true,
   setData: () => {},
+  isModalOpen: false,
+  setIsModalOpen: () => {},
 });
 
 export const UserProvider = ({ children }) => {
   const currentYear = new Date().getFullYear();
   const currentMonth = 'august';
 
-  const [currentUser, setCurrentUser] = useState(() => users[0]);
+  const [currentUser, setCurrentUser] = useState(() => null);
   const [year, setYear] = useState(() => currentYear);
   const [month, setMonth] = useState(() => currentMonth);
   const [currency, setCurrency] = useState(() => '€');
   const [data, setData] = useState(() => true);
+  const [isModalOpen, setIsModalOpen] = useState(() => false);
 
   const accountDetails = () => {
     const curYear = currentUser.year;
@@ -72,6 +75,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const logout = () => {
+    setIsModalOpen(false);
     setCurrentUser(null);
   };
 
@@ -90,6 +94,8 @@ export const UserProvider = ({ children }) => {
     setCurrency,
     data,
     setData,
+    isModalOpen,
+    setIsModalOpen,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

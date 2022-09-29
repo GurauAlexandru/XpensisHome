@@ -1,0 +1,30 @@
+@import '../../styles/styles';
+
+.modal {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  padding: 5rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__box {
+    height: 10rem;
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &__img {
+    height: 35rem;
+    width: auto;
+  }
+}
