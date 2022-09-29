@@ -1,1 +1,13 @@
 @import '../../styles/styles';
+
+.budget-total-savings {
+  width: 100%;
+  height: 10rem;
+  margin-top: 3rem;
+  padding-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
