@@ -7,28 +7,33 @@ import Navigation from '../../components/navigation/navigation.component';
 import BudgetTotalSavings from '../../components/elements/budget-total-savings/budget-total-savings.component';
 
 const AccountBudget = () => {
-  const { currentUser, year, currency } = useContext(UserContext);
+  const { currentUser, currency } = useContext(UserContext);
 
-  const allData = Object.values(currentUser?.year[year]);
+  const allYears = Object.keys(currentUser?.year);
 
-  const yearTotal = allData.map((el) => {
-    const { income, outcome } = el;
-    const salary = income.salary.reduce((cur, acc) => cur + acc, 0);
-    const otherIncome = income.others.reduce((cur, acc) => cur + acc, 0);
-    const allIncome = salary + otherIncome;
+  const allTime = allYears.map((el) => {
+    const allData = Object.values(currentUser?.year[el]);
 
-    const allBills = outcome.bills;
-    const allBillsValues = Object.values(allBills);
-    const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
-    const otherOutcome = outcome.others.reduce((cur, acc) => cur + acc, 0);
-    const totalOutcome = totalBills + otherOutcome;
+    const yearTotal = allData.map((el) => {
+      const { income, outcome } = el;
+      const salary = income.salary.reduce((cur, acc) => cur + acc, 0);
+      const otherIncome = income.others.reduce((cur, acc) => cur + acc, 0);
+      const allIncome = salary + otherIncome;
 
-    const totalBalance = allIncome - totalOutcome;
+      const allBills = outcome.bills;
+      const allBillsValues = Object.values(allBills);
+      const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
+      const otherOutcome = outcome.others.reduce((cur, acc) => cur + acc, 0);
+      const totalOutcome = totalBills + otherOutcome;
 
-    return totalBalance;
+      const totalBalance = allIncome - totalOutcome;
+
+      return totalBalance;
+    });
+
+    return yearTotal.reduce((cur, acc) => cur + acc, 0);
   });
-
-  const totalSavings = yearTotal.reduce((cur, acc) => cur + acc, 0);
+  const totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
 
   return (
     <div className='body-container account-budget'>
@@ -36,15 +41,9 @@ const AccountBudget = () => {
       <BudgetTotalSavings
         money={totalSavings.toLocaleString('RO-ro')}
         currency={currency}
-        year={year}
       />
     </div>
   );
 };
 
 export default AccountBudget;
-
-/**
- * Maybe i'll change this to show saving for all years at once
- * There are some repetitive code [chart and user.context]
- */
