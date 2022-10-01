@@ -36,13 +36,21 @@ const AccountBudget = () => {
   const totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
 
   return (
-    <div className='body-container account-budget'>
+    <main className='body-container account-budget'>
       <Navigation header='Bugdet' />
       <BudgetTotalSavings
         money={totalSavings.toLocaleString('RO-ro')}
         currency={currency}
       />
-    </div>
+      <section className='budget-container'>
+        <h3 className='header h-cart-big'>Here are some things tou can do</h3>
+        <div className='budget-actions'>
+          <div className='cart-action'>1</div>
+          <div className='cart-action'>2</div>
+          <div className='cart-action'>3</div>
+        </div>
+      </section>
+    </main>
   );
 };
 
