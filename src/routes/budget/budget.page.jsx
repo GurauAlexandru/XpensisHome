@@ -3,8 +3,12 @@ import './budget.styles.scss';
 import { useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
+import Icon from '../../components/icon/icon.component';
+import dataPlus from '../../assets/icons/data-plus.svg';
+
 import Navigation from '../../components/navigation/navigation.component';
 import BudgetTotalSavings from '../../components/elements/budget-total-savings/budget-total-savings.component';
+import Button from '../../components/button/button.component';
 
 const AccountBudget = () => {
   const { currentUser, currency } = useContext(UserContext);
@@ -45,9 +49,17 @@ const AccountBudget = () => {
       <section className='budget-container'>
         <h3 className='header h-cart-big'>Here are some things tou can do</h3>
         <div className='budget-actions'>
-          <div className='cart-action'>1</div>
-          <div className='cart-action'>2</div>
-          <div className='cart-action'>3</div>
+          <Button
+            className='button button__cart'
+            onClick={() => alert('add data button clicked')}
+          >
+            <Icon src={dataPlus} alt='add data' />
+            <h2 className='header h-normal mt-small'>Add data</h2>
+            <p className='p-cart-action'>
+              In order to keep track with your expensis you should add data each
+              month.
+            </p>
+          </Button>
         </div>
       </section>
     </main>

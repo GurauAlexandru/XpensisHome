@@ -33,16 +33,3 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
-
-.cart-action {
-  height: 30vh;
-  width: 20rem;
-  border-radius: 5px;
-  box-shadow: $shadow-cart;
-  background-color: $color-white;
-
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-// I think here i have to change this layout --just a test

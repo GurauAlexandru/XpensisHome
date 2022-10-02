@@ -38,4 +38,22 @@
       width: 5rem;
     }
   }
+
+  &__cart {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: $shadow-cart;
+    background-color: $color-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-grow: 1;
+    }
+  }
 }

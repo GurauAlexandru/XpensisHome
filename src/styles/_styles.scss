@@ -82,7 +82,6 @@ $border-gray: 1px solid rgba($color-black, 0.1);
 }
 
 .header-cart {
-  // padding: 0 1rem;
   width: 100%;
   text-align: center;
   overflow: auto;
@@ -108,6 +107,11 @@ $border-gray: 1px solid rgba($color-black, 0.1);
   font-size: 1.4rem;
   color: $color-primary;
 }
+.p-cart-action {
+  font-size: 1.3rem;
+  text-align: left;
+  color: $color-dark-gray;
+}
 
 .p-total {
   font-size: 2rem;
@@ -118,6 +122,12 @@ $border-gray: 1px solid rgba($color-black, 0.1);
 // Margins
 .mt-large {
   margin-top: 3rem;
+}
+.mt-normal {
+  margin-top: 2rem;
+}
+.mt-small {
+  margin-top: 1rem;
 }
 
 // font color
