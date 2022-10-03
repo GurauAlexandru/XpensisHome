@@ -39,6 +39,28 @@
     }
   }
 
+  &__cancel {
+    height: 4rem;
+    width: 25rem;
+    border-radius: 5px;
+    font-size: 2rem;
+    letter-spacing: 1.4px;
+    color: $color-white;
+
+    background-color: rgb(239, 124, 124);
+  }
+
+  &__add-data {
+    height: 4rem;
+    width: 25rem;
+    border-radius: 5px;
+    font-size: 2rem;
+    letter-spacing: 1.4px;
+    color: $color-black;
+    background-color: $color-white;
+    border: 1px solid $color-black;
+  }
+
   &__cart {
     height: 20rem;
     width: 20rem;

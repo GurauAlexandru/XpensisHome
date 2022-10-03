@@ -1,6 +1,6 @@
 import './budget.styles.scss';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import Icon from '../../components/icon/icon.component';
@@ -11,7 +11,6 @@ import BudgetTotalSavings from '../../components/elements/budget-total-savings/b
 import Button from '../../components/button/button.component';
 
 import ModalAddData from '../../components/modal-add-data/modal-add-data.component';
-import { useState } from 'react';
 
 const AccountBudget = () => {
   const { currentUser, currency } = useContext(UserContext);
@@ -44,21 +43,15 @@ const AccountBudget = () => {
   });
   const totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
 
-  // take currentUser data to add new data
-  console.log(allTime);
-
   // Add data
   const openModalAddData = () => setAddData(true);
   const closeModalData = () => setAddData(false);
-
-  // testing
-  // const takeSalary = currentUser?.
 
   return addData ? (
     <ModalAddData
       closeModal={
         <Button
-          className='button button__normal'
+          className='button button__cancel'
           onClick={() => closeModalData()}
         >
           Close

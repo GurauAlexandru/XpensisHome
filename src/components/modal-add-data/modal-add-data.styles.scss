@@ -2,8 +2,9 @@
 
 .modal-add-data {
   position: absolute;
-  height: 100vh;
+  height: auto;
   width: 100vw;
+  padding: 5rem 1rem;
 
   display: flex;
   flex-direction: column;
@@ -11,4 +12,25 @@
   align-items: center;
 
   background-color: $color-white;
+
+  &__img {
+    height: 30rem;
+    width: auto;
+
+    @media only screen and (max-width: $bp-small) {
+      height: 25rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    margin-bottom: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
