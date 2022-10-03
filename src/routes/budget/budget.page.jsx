@@ -10,8 +10,13 @@ import Navigation from '../../components/navigation/navigation.component';
 import BudgetTotalSavings from '../../components/elements/budget-total-savings/budget-total-savings.component';
 import Button from '../../components/button/button.component';
 
+import ModalAddData from '../../components/modal-add-data/modal-add-data.component';
+import { useState } from 'react';
+
 const AccountBudget = () => {
   const { currentUser, currency } = useContext(UserContext);
+
+  const [addData, setAddData] = useState(false);
 
   const allYears = Object.keys(currentUser?.year);
 
@@ -39,7 +44,28 @@ const AccountBudget = () => {
   });
   const totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
 
-  return (
+  // take currentUser data to add new data
+  console.log(allTime);
+
+  // Add data
+  const openModalAddData = () => setAddData(true);
+  const closeModalData = () => setAddData(false);
+
+  // testing
+  // const takeSalary = currentUser?.
+
+  return addData ? (
+    <ModalAddData
+      closeModal={
+        <Button
+          className='button button__normal'
+          onClick={() => closeModalData()}
+        >
+          Close
+        </Button>
+      }
+    />
+  ) : (
     <main className='body-container account-budget'>
       <Navigation header='Bugdet' />
       <BudgetTotalSavings
@@ -51,7 +77,7 @@ const AccountBudget = () => {
         <div className='budget-actions'>
           <Button
             className='button button__cart'
-            onClick={() => alert('add data button clicked')}
+            onClick={() => openModalAddData()}
           >
             <Icon src={dataPlus} alt='add data' />
             <h2 className='header h-normal mt-small'>Add data</h2>

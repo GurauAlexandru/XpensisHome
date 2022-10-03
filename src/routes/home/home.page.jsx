@@ -15,14 +15,16 @@ import pieChart from '../../assets/icons/pie-chart.svg';
 import pieChartFull from '../../assets/icons/pie-chart-full.png';
 import logOut from '../../assets/icons/log-out.svg';
 
-import Modal from '../../components/modal/modal.component';
+import ModalSignOut from '../../components/modal-sign-out/modal-sign-out.component';
+import imgGoodbye from '../../assets/wallpapers/goodbye.webp';
 
 import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [fill, setFill] = useState(false);
   const [myPath, setMyPath] = useState('/');
-  const { setIsModalOpen, isModalOpen } = useContext(UserContext);
+  const { setIsModalOpen, isModalOpen, currentUser, logout } =
+    useContext(UserContext);
 
   const handleClick = () => {
     setFill(!fill);
@@ -33,9 +35,23 @@ const Home = () => {
   }, [fill, myPath]);
 
   const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return isModalOpen ? (
-    <Modal />
+    <ModalSignOut
+      name={currentUser.name}
+      image={imgGoodbye}
+      logoutBtn={
+        <Button className='button button__normal' onClick={() => logout()}>
+          Logout
+        </Button>
+      }
+      closeModalBtn={
+        <Button className='button button__normal' onClick={() => closeModal()}>
+          Go back
+        </Button>
+      }
+    />
   ) : (
     <div className='home-setup'>
       <main className='home-page'>
