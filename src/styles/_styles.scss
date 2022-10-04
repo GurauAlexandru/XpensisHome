@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 $text-style-primary: 'Roboto', sans-serif;
+$text-style-secondary: 'Dancing Script', cursive;
 
 // Breakpoints
 $bp-4k: 156em; // 2500px
@@ -41,13 +43,16 @@ $border-gray: 1px solid rgba($color-black, 0.1);
     color: $color-dark-gray;
   }
 }
+.handwrite {
+  font-family: $text-style-secondary;
+}
 
 .h-big {
-  font-size: 5rem;
+  font-size: 4.5rem;
 
-  @media only screen and (max-width: $bp-small) {
-    font-size: 4rem;
-  }
+  // @media only screen and (max-width: $bp-small) {
+  //   font-size: 3.5rem;
+  // }
 }
 .h-xLarge {
   font-size: 3rem;
@@ -57,7 +62,7 @@ $border-gray: 1px solid rgba($color-black, 0.1);
 }
 
 .h-normal {
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   @media only screen and (max-width: $bp-medium) {
     font-size: 1.5rem;

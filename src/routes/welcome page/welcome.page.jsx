@@ -23,7 +23,7 @@ const WelcomePage = () => {
         />
       </div>
       <div className='welcome-page__container'>
-        <h1 className='header h-big'>Xpenses Home</h1>
+        <h1 className='header h-big handwrite'>Xpenses Home</h1>
         {account ? <SignIn /> : <RegisterForm />}
         <h4 className='header h-small'>
           {account ? " Don't have an account? " : 'Have an account? '}

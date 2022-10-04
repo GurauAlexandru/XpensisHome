@@ -83,60 +83,72 @@ const ModalAddData = ({ closeModal }) => {
           handleSubmit();
         }}
       >
-        <FormInput
-          label='Monthly salary'
-          type='number'
-          placeholder='ex. 1.000€'
-          onChange={handleChange}
-          name='salary'
-          value={salary}
-        />
-        <FormInput
-          label='Other income'
-          type='number'
-          placeholder='ex. 1.000€'
-          onChange={handleChange}
-          name='otherIncome'
-          value={otherIncome}
-        />
-        <div className='modal-add-data__options'>
-          <FormInput
-            label='Bills'
-            type='number'
-            placeholder='ex. 1.000€'
-            onChange={handleChange}
-            name='billsInput'
-            value={billsInput}
-          />
-          <select
-            className='modal-add-data__options--select'
-            onChange={handleSelectBill}
-          >
-            <option>Electricity</option>
-            <option>Gaz</option>
-            <option>Morgage</option>
-            <option>Rent</option>
-            <option>Tv</option>
-            <option>Internet</option>
-            <option>Phone</option>
-            <option>Bank</option>
-            <option>Fuel</option>
-            <option>Apple music</option>
-          </select>
-        </div>
-        <FormInput
-          label='Other outcome'
-          type='number'
-          placeholder='ex. 1.000€'
-          onChange={handleChange}
-          name='otherOutcome'
-          value={otherOutcome}
-        />
+        <section className='modal-add-data__box'>
+          <div className='modal-add-data__box--income'>
+            <div className='modal-add-data__box__header'>
+              <h2 className='header h-large'>Income</h2>
+            </div>
+            <FormInput
+              label='Monthly salary'
+              type='number'
+              placeholder='ex. 1.000€'
+              onChange={handleChange}
+              name='salary'
+              value={salary}
+            />
+            <FormInput
+              label='Other income'
+              type='number'
+              placeholder='ex. 1.000€'
+              onChange={handleChange}
+              name='otherIncome'
+              value={otherIncome}
+            />
+          </div>
+          <div className='modal-add-data__box--outcome'>
+            <div className='modal-add-data__box__header'>
+              <h2 className='header h-large'>Outcome</h2>
+            </div>
+            <div className='modal-add-data__options'>
+              <FormInput
+                label='Bills'
+                type='number'
+                placeholder='ex. 1.000€'
+                onChange={handleChange}
+                name='billsInput'
+                value={billsInput}
+              />
+              <select
+                className='modal-add-data__options--select'
+                onChange={handleSelectBill}
+              >
+                <option>Electricity</option>
+                <option>Gaz</option>
+                <option>Morgage</option>
+                <option>Rent</option>
+                <option>Tv</option>
+                <option>Internet</option>
+                <option>Phone</option>
+                <option>Bank</option>
+                <option>Fuel</option>
+                <option>Apple music</option>
+              </select>
+            </div>
+            <FormInput
+              label='Other outcome'
+              type='number'
+              placeholder='ex. 1.000€'
+              onChange={handleChange}
+              name='otherOutcome'
+              value={otherOutcome}
+            />
+          </div>
+        </section>
+
         <Button className='button button__add-data mt-large' type='submit'>
           Send data
         </Button>
       </form>
-
       {closeModal}
     </div>
   );

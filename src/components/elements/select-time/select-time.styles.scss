@@ -13,7 +13,20 @@
   height: 3.5rem;
   width: 12rem;
   align-self: flex-end;
-  // border: 1px solid $color-black;
+  border: none;
+  border-radius: 5px;
+  color: $color-black;
+  background-color: $color-white;
+  -webkit-appearance: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.year-options {
+  height: 3.5rem;
+  width: 12rem;
+  align-self: flex-end;
   border: none;
   border-radius: 5px;
   color: $color-black;
@@ -22,21 +35,6 @@
   padding: 0 1rem;
   cursor: pointer;
   font-size: 2rem;
-}
-
-.year-options {
-  height: 3.5rem;
-  width: 12rem;
-  align-self: flex-end;
-  // border: 1px solid $color-black;
-  border: none;
-  border-radius: 5px;
-  color: $color-black;
-  background-color: $color-white;
-  -webkit-appearance: none;
-  padding: 0 1rem;
-  cursor: pointer;
-  font-size: 2.5rem;
 }
 
 .year-options:focus,

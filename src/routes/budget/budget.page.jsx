@@ -63,7 +63,7 @@ const AccountBudget = () => {
           className='button button__cancel'
           onClick={() => closeModalData()}
         >
-          X
+          Close modal
         </Button>
       }
     />
