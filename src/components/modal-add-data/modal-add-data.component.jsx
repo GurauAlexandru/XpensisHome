@@ -6,6 +6,7 @@ import { UserContext } from '../../context/user.context';
 import FormInput from '../form-input/form-input.component';
 import imgAddData from '../../assets/wallpapers/add-data.webp';
 import Button from '../button/button.component';
+import SuccessDataSend from '../success/data-send/success-data-send.component';
 
 import SelectTime from '../elements/select-time/select-time.component';
 
@@ -21,8 +22,7 @@ const ModalAddData = ({ closeModal }) => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { salary, otherIncome, otherOutcome, billsInput } = formFields;
   const [bill, setBill] = useState('Electricity');
-  // const [year, setYear] = useState(2022);
-  // const [month, setMonth] = useState('august');
+  const [succedDataSend, setSuccedDataSend] = useState(false);
 
   const currentSalary = currentUser?.year[year][month].income.salary;
   const currentOtherIncome = currentUser?.year[year][month].income.others;
@@ -34,6 +34,19 @@ const ModalAddData = ({ closeModal }) => {
     currentOtherIncome.push(+otherIncome);
     currentOtherOutcome.push(+otherOutcome);
     if (billsInput !== '') currentBills[bill] = +billsInput;
+
+    if (
+      salary === '' &&
+      otherIncome === '' &&
+      otherOutcome === '' &&
+      billsInput === ''
+    )
+      return;
+    setSuccedDataSend(true);
+
+    setTimeout(() => {
+      setSuccedDataSend(false);
+    }, 6000);
 
     setFormFields(defaultFormFields);
   };
@@ -47,42 +60,21 @@ const ModalAddData = ({ closeModal }) => {
   const handleSelectBill = (e) => {
     setBill(e.target.value);
   };
-  // const handleSelectMonth = (e) => {
-  //   setMonth(e.target.value);
-  // };
-  // const handleSelectYear = (e) => {
-  //   setYear(e.target.value);
-  // };
 
   return (
     <div className='modal-add-data'>
       <h2 className='header h-xLarge'>Add data to database</h2>
-      <img src={imgAddData} alt='add data' className='modal-add-data__img' />
+      {succedDataSend ? (
+        <SuccessDataSend />
+      ) : (
+        <img src={imgAddData} alt='add data' className='modal-add-data__img' />
+      )}
+
       <p className='p-total'>
         Would you like to complete the inputs and send them to database?
       </p>
       <div className='modal-add-data__select-time'>
         <SelectTime />
-        {/* <select
-          className='modal-add-data__options--select'
-          onChange={handleSelectMonth}
-        >
-          <option>august</option>
-          <option>iulie</option>
-          <option>iunie</option>
-          <option>mai</option>
-          <option>aprilie</option>
-          <option>martie</option>
-          <option>februarie</option>
-          <option>ianuarie</option>
-        </select> */}
-        {/* <select
-          className='modal-add-data__options--select'
-          onChange={handleSelectYear}
-        >
-          <option>2022</option>
-          <option>2021</option>
-        </select> */}
       </div>
       <form
         className='modal-add-data__container'

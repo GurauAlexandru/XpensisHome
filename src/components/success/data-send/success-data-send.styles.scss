@@ -1,0 +1,19 @@
+@import '../../../styles/styles';
+
+.success-data-send {
+  height: 20rem;
+  width: 30rem;
+  border-radius: 5px;
+
+  color: green;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    height: 10rem;
+    width: auto;
+  }
+}
