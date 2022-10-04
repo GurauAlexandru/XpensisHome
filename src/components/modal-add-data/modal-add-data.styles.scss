@@ -2,7 +2,7 @@
 
 .modal-add-data {
   position: absolute;
-  height: auto;
+  min-height: 100%;
   width: 100vw;
   padding: 5rem 1rem;
 
@@ -14,18 +14,13 @@
   background-color: $color-white;
 
   &__img {
-    height: 30rem;
+    height: 20rem;
     width: auto;
-
-    @media only screen and (max-width: $bp-small) {
-      height: 25rem;
-    }
   }
 
   &__container {
     width: 100%;
     height: auto;
-    padding: 2rem;
     margin-bottom: 3rem;
 
     display: flex;
@@ -49,6 +44,8 @@
       align-self: flex-end;
       border: 1px solid $color-black;
       border-radius: 5px;
+      color: $color-black;
+      background-color: $color-white;
     }
   }
 }

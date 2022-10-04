@@ -1,7 +1,6 @@
 import './modal-add-data.styles.scss';
 
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 
 import FormInput from '../form-input/form-input.component';
@@ -19,7 +18,7 @@ const ModalAddData = ({ closeModal }) => {
   const { currentUser } = useContext(UserContext);
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { salary, otherIncome, otherOutcome, billsInput } = formFields;
-  const [bill, setBill] = useState('Haine');
+  const [bill, setBill] = useState('Electricity');
 
   // This is working (YEEEE)
   // I have to make it more dynamic and add all fields
@@ -32,7 +31,7 @@ const ModalAddData = ({ closeModal }) => {
     currentSalary.push(+salary);
     currentOtherIncome.push(+otherIncome);
     currentOtherOutcome.push(+otherOutcome);
-    currentBills[bill] = +billsInput;
+    if (billsInput !== '') currentBills[bill] = +billsInput;
 
     setFormFields(defaultFormFields);
   };
@@ -90,8 +89,16 @@ const ModalAddData = ({ closeModal }) => {
             className='modal-add-data__options--select'
             onChange={handleSelectBill}
           >
-            <option>Haine</option>
-            <option>Incaltari</option>
+            <option>Electricity</option>
+            <option>Gaz</option>
+            <option>Morgage</option>
+            <option>Rent</option>
+            <option>Tv</option>
+            <option>Internet</option>
+            <option>Phone</option>
+            <option>Bank</option>
+            <option>Fuel</option>
+            <option>Apple music</option>
           </select>
         </div>
         <FormInput

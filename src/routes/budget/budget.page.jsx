@@ -11,6 +11,7 @@ import BudgetTotalSavings from '../../components/elements/budget-total-savings/b
 import Button from '../../components/button/button.component';
 
 import ModalAddData from '../../components/modal-add-data/modal-add-data.component';
+import { useEffect } from 'react';
 
 const AccountBudget = () => {
   const { currentUser, currency } = useContext(UserContext);
@@ -47,6 +48,14 @@ const AccountBudget = () => {
   const openModalAddData = () => setAddData(true);
   const closeModalData = () => setAddData(false);
 
+  useEffect(() => {
+    return document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModalData();
+      }
+    });
+  }, [addData, setAddData]);
+
   return addData ? (
     <ModalAddData
       closeModal={
@@ -54,7 +63,7 @@ const AccountBudget = () => {
           className='button button__cancel'
           onClick={() => closeModalData()}
         >
-          Close
+          X
         </Button>
       }
     />
