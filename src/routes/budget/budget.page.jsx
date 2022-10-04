@@ -78,7 +78,7 @@ const AccountBudget = () => {
         <h3 className='header h-cart-big'>Here are some things tou can do</h3>
         <div className='budget-actions'>
           <Button
-            className='button button__cart'
+            className='button button__cart button__cart--light-yellow'
             onClick={() => openModalAddData()}
           >
             <Icon src={dataPlus} alt='add data' />

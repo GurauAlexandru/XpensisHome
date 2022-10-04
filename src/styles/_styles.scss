@@ -22,6 +22,8 @@ $color-white: white;
 $color-dark-gray: #adb5bd;
 $color-black: #000000;
 
+$color-light-yellow: #ffeedd;
+
 // Shadows
 $shadow-cart: 1px 1px 10px rgba($color-primary, 0.1);
 
@@ -110,7 +112,7 @@ $border-gray: 1px solid rgba($color-black, 0.1);
 .p-cart-action {
   font-size: 1.3rem;
   text-align: left;
-  color: $color-dark-gray;
+  color: rgba($color-black, 0.5);
 }
 
 .p-total {

@@ -19,13 +19,13 @@ const ModalAddData = ({ closeModal }) => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { salary, otherIncome, otherOutcome, billsInput } = formFields;
   const [bill, setBill] = useState('Electricity');
+  const [year, setYear] = useState(2022);
+  const [month, setMonth] = useState('august');
 
-  // This is working (YEEEE)
-  // I have to make it more dynamic and add all fields
-  const currentSalary = currentUser?.year[2022].august.income.salary;
-  const currentOtherIncome = currentUser?.year[2022].august.income.others;
-  const currentOtherOutcome = currentUser?.year[2022].august.outcome.others;
-  const currentBills = currentUser?.year[2022].august.outcome.bills;
+  const currentSalary = currentUser?.year[year][month].income.salary;
+  const currentOtherIncome = currentUser?.year[year][month].income.others;
+  const currentOtherOutcome = currentUser?.year[year][month].outcome.others;
+  const currentBills = currentUser?.year[year][month].outcome.bills;
 
   const handleSubmit = () => {
     currentSalary.push(+salary);
@@ -45,6 +45,12 @@ const ModalAddData = ({ closeModal }) => {
   const handleSelectBill = (e) => {
     setBill(e.target.value);
   };
+  const handleSelectMonth = (e) => {
+    setMonth(e.target.value);
+  };
+  const handleSelectYear = (e) => {
+    setYear(e.target.value);
+  };
 
   return (
     <div className='modal-add-data'>
@@ -53,6 +59,28 @@ const ModalAddData = ({ closeModal }) => {
       <p className='p-total'>
         Would you like to complete the inputs and send them to database?
       </p>
+      <div className='modal-add-data__select-time'>
+        <select
+          className='modal-add-data__options--select'
+          onChange={handleSelectMonth}
+        >
+          <option>august</option>
+          <option>iulie</option>
+          <option>iunie</option>
+          <option>mai</option>
+          <option>aprilie</option>
+          <option>martie</option>
+          <option>februarie</option>
+          <option>ianuarie</option>
+        </select>
+        <select
+          className='modal-add-data__options--select'
+          onChange={handleSelectYear}
+        >
+          <option>2022</option>
+          <option>2021</option>
+        </select>
+      </div>
       <form
         className='modal-add-data__container'
         onSubmit={(e) => {
