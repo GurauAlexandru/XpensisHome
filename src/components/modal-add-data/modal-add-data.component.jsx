@@ -10,22 +10,29 @@ import Button from '../button/button.component';
 
 const defaultFormFields = {
   salary: '',
-  otherInputs: '',
+  otherIncome: '',
+  billsInput: '',
+  otherOutcome: '',
 };
 
 const ModalAddData = ({ closeModal }) => {
   const { currentUser } = useContext(UserContext);
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { salary, otherInputs } = formFields;
+  const { salary, otherIncome, otherOutcome, billsInput } = formFields;
+  const [bill, setBill] = useState('Haine');
 
   // This is working (YEEEE)
   // I have to make it more dynamic and add all fields
   const currentSalary = currentUser?.year[2022].august.income.salary;
   const currentOtherIncome = currentUser?.year[2022].august.income.others;
+  const currentOtherOutcome = currentUser?.year[2022].august.outcome.others;
+  const currentBills = currentUser?.year[2022].august.outcome.bills;
 
   const handleSubmit = () => {
-    currentSalary.push(salary);
-    currentOtherIncome.push(otherInputs);
+    currentSalary.push(+salary);
+    currentOtherIncome.push(+otherIncome);
+    currentOtherOutcome.push(+otherOutcome);
+    currentBills[bill] = +billsInput;
 
     setFormFields(defaultFormFields);
   };
@@ -35,6 +42,11 @@ const ModalAddData = ({ closeModal }) => {
 
     setFormFields({ ...formFields, [name]: +value });
   };
+
+  const handleSelectBill = (e) => {
+    setBill(e.target.value);
+  };
+
   return (
     <div className='modal-add-data'>
       <h2 className='header h-xLarge'>Add data to database</h2>
@@ -50,7 +62,7 @@ const ModalAddData = ({ closeModal }) => {
         }}
       >
         <FormInput
-          label='Salary'
+          label='Monthly salary'
           type='number'
           placeholder='ex. 1.000€'
           onChange={handleChange}
@@ -58,12 +70,37 @@ const ModalAddData = ({ closeModal }) => {
           value={salary}
         />
         <FormInput
-          label='Others'
+          label='Other income'
           type='number'
           placeholder='ex. 1.000€'
           onChange={handleChange}
-          name='otherInputs'
-          value={otherInputs}
+          name='otherIncome'
+          value={otherIncome}
+        />
+        <div className='modal-add-data__options'>
+          <FormInput
+            label='Bills'
+            type='number'
+            placeholder='ex. 1.000€'
+            onChange={handleChange}
+            name='billsInput'
+            value={billsInput}
+          />
+          <select
+            className='modal-add-data__options--select'
+            onChange={handleSelectBill}
+          >
+            <option>Haine</option>
+            <option>Incaltari</option>
+          </select>
+        </div>
+        <FormInput
+          label='Other outcome'
+          type='number'
+          placeholder='ex. 1.000€'
+          onChange={handleChange}
+          name='otherOutcome'
+          value={otherOutcome}
         />
         <Button className='button button__add-data mt-large' type='submit'>
           Send data

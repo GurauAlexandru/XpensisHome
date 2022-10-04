@@ -33,4 +33,22 @@
     justify-content: flex-start;
     align-items: center;
   }
+
+  &__options {
+    height: 6rem;
+    width: 25rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    &--select {
+      height: 3.5rem;
+      width: 15rem;
+      align-self: flex-end;
+      border: 1px solid $color-black;
+      border-radius: 5px;
+    }
+  }
 }

@@ -9,7 +9,7 @@ export const alexandruDB = {
     2022: {
       august: {
         income: {
-          salary: [1000, 500],
+          salary: [1000],
           others: [],
         },
         outcome: {
