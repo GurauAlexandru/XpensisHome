@@ -40,7 +40,7 @@ const SelectTime = () => {
           ))}
         </select>
       </h3>
-      <h3 className='header h-cart-huge'>
+      <h3 className='header h-small'>
         <select className='year-options' onChange={handleSelectYear}>
           {allYears.map((el) => (
             <option key={el} value={el}>

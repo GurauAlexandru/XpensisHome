@@ -1,27 +1,34 @@
 @import '../../../styles/styles';
 
 .select-time {
-  width: 100%;
+  width: 25rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .month-options {
-  border: none;
-  background-color: inherit;
+  height: 3.5rem;
+  width: 12rem;
+  align-self: flex-end;
+  border: 1px solid $color-black;
+  border-radius: 5px;
   color: $color-black;
+  background-color: $color-white;
 }
 
 .year-options {
-  font-size: 2rem;
-  font-weight: 700;
-
-  border: none;
-  background-color: inherit;
+  height: 3.5rem;
+  width: 12rem;
+  align-self: flex-end;
+  border: 1px solid $color-black;
+  border-radius: 5px;
   color: $color-black;
+  background-color: $color-white;
 }
+
 .year-options:focus,
 .month-options:focus {
   outline: none;

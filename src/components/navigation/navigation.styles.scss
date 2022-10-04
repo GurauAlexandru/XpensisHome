@@ -19,10 +19,15 @@
 
   &__time {
     height: 100%;
-    width: 17rem;
+    width: 25rem;
 
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      margin: 2rem 0;
+    }
   }
 }
 

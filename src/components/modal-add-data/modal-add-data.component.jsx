@@ -7,6 +7,8 @@ import FormInput from '../form-input/form-input.component';
 import imgAddData from '../../assets/wallpapers/add-data.webp';
 import Button from '../button/button.component';
 
+import SelectTime from '../elements/select-time/select-time.component';
+
 const defaultFormFields = {
   salary: '',
   otherIncome: '',
@@ -15,12 +17,12 @@ const defaultFormFields = {
 };
 
 const ModalAddData = ({ closeModal }) => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, year, month } = useContext(UserContext);
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { salary, otherIncome, otherOutcome, billsInput } = formFields;
   const [bill, setBill] = useState('Electricity');
-  const [year, setYear] = useState(2022);
-  const [month, setMonth] = useState('august');
+  // const [year, setYear] = useState(2022);
+  // const [month, setMonth] = useState('august');
 
   const currentSalary = currentUser?.year[year][month].income.salary;
   const currentOtherIncome = currentUser?.year[year][month].income.others;
@@ -45,12 +47,12 @@ const ModalAddData = ({ closeModal }) => {
   const handleSelectBill = (e) => {
     setBill(e.target.value);
   };
-  const handleSelectMonth = (e) => {
-    setMonth(e.target.value);
-  };
-  const handleSelectYear = (e) => {
-    setYear(e.target.value);
-  };
+  // const handleSelectMonth = (e) => {
+  //   setMonth(e.target.value);
+  // };
+  // const handleSelectYear = (e) => {
+  //   setYear(e.target.value);
+  // };
 
   return (
     <div className='modal-add-data'>
@@ -60,7 +62,8 @@ const ModalAddData = ({ closeModal }) => {
         Would you like to complete the inputs and send them to database?
       </p>
       <div className='modal-add-data__select-time'>
-        <select
+        <SelectTime />
+        {/* <select
           className='modal-add-data__options--select'
           onChange={handleSelectMonth}
         >
@@ -72,14 +75,14 @@ const ModalAddData = ({ closeModal }) => {
           <option>martie</option>
           <option>februarie</option>
           <option>ianuarie</option>
-        </select>
-        <select
+        </select> */}
+        {/* <select
           className='modal-add-data__options--select'
           onChange={handleSelectYear}
         >
           <option>2022</option>
           <option>2021</option>
-        </select>
+        </select> */}
       </div>
       <form
         className='modal-add-data__container'
