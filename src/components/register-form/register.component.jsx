@@ -6,11 +6,9 @@ import FormInput from '../form-input/form-input.component';
 import users from '../../store/users';
 import { UserContext } from '../../context/user.context';
 import createNewUser from '../../context/createNewUser';
-// import { useMemo } from 'react';
-// import { useCallback } from 'react';
 
 const defaultFormFields = {
-  Uname: '',
+  name: '',
   email: '',
   password: '',
   confirmPassword: '',
@@ -20,15 +18,27 @@ const RegisterForm = () => {
   const { setCurrentUser } = useContext(UserContext);
   const [user, setUser] = useState(() => []);
   const [formFields, setFormFields] = useState(() => defaultFormFields);
-  const { Uname, email, password, confirmPassword } = formFields;
+  const { name, email, password, confirmPassword } = formFields;
 
   useEffect(() => {
     setUser(users);
   }, [user]);
 
+  const login = (user) => {
+    return setCurrentUser(user);
+  };
+
+  const createUserFunction = () => {
+    const myNewUser = createNewUser(name, email, password);
+    users.push(myNewUser);
+
+    return users;
+  };
+
   const handleSubmit = () => {
-    const newCreatedUser = user.find((el) => {
-      users.push(createNewUser(Uname, email, password));
+    createUserFunction();
+
+    const newUser = user.find((el) => {
       return el.email === email && el.password === password;
     });
 
@@ -36,8 +46,10 @@ const RegisterForm = () => {
       alert("Password don't match with confirm password");
       return;
     }
-
-    setCurrentUser(newCreatedUser);
+    // DISPLAY A MESSAGE SUCCESS OR FAILED
+    setTimeout(() => {
+      login(newUser);
+    }, 3000);
   };
 
   const handleChange = (event) => {
@@ -45,8 +57,6 @@ const RegisterForm = () => {
 
     setFormFields({ ...formFields, [name]: value });
   };
-
-  console.log(user);
 
   return (
     <div className='register__box'>
@@ -63,8 +73,8 @@ const RegisterForm = () => {
           type='text'
           required
           onChange={handleChange}
-          name='Uname'
-          value={Uname}
+          name='name'
+          value={name}
         />
         <FormInput
           label='Email'
