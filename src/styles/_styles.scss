@@ -28,6 +28,8 @@ $color-light-yellow: #ffeedd;
 
 // Shadows
 $shadow-cart: 1px 1px 10px rgba($color-primary, 0.1);
+$shadow-message-success: 1px 1px 10px rgba($color-green, 0.3);
+$shadow-message-failed: 1px 1px 10px rgba($color-red, 0.3);
 
 // Borders
 $border-black: 1px solid $color-black;

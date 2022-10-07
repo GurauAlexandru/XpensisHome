@@ -1,0 +1,19 @@
+@import '../../styles/styles';
+
+.message {
+  width: 30rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.message__success {
+  border: 1px solid $color-green;
+  box-shadow: $shadow-message-success;
+}
+.message__failed {
+  border: 1px solid $color-red;
+  box-shadow: $shadow-message-failed;
+}
