@@ -47,7 +47,7 @@ const SignIn = () => {
 
   return (
     <div className='sign-in__box'>
-      <h3 className='header h-normal'>Login into your account</h3>
+      <h4 className='header h-normal'>Login into your account</h4>
       {successMessage === false ? (
         <>
           {failedMessage === true ? (
@@ -66,7 +66,7 @@ const SignIn = () => {
                 }}
               >
                 <FormInput
-                  label='Email'
+                  label='email'
                   type='email'
                   required
                   onChange={handleChange}
@@ -74,7 +74,7 @@ const SignIn = () => {
                   value={email}
                 />
                 <FormInput
-                  label='Password'
+                  label='password'
                   type='password'
                   required
                   onChange={handleChange}
