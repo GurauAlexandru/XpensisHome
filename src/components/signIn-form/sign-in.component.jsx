@@ -47,7 +47,7 @@ const SignIn = () => {
 
   return (
     <div className='sign-in__box'>
-      <h4 className='header h-normal'>Login into your account</h4>
+      <h2 className='header h-normal'>Login into your account</h2>
       {successMessage === false ? (
         <>
           {failedMessage === true ? (
