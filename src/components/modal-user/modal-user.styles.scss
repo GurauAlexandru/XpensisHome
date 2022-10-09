@@ -1,0 +1,23 @@
+@import '../../styles/styles';
+
+.modal-user {
+  height: 30rem;
+  width: 25rem;
+  background-color: white;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  box-shadow: $shadow-cart;
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  @media only screen and (max-width: $bp-small) {
+    top: 18rem;
+    width: 100%;
+  }
+}

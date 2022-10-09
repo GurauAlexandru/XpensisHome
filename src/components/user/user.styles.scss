@@ -1,0 +1,23 @@
+@import '../../styles/styles';
+
+.user {
+  height: 100%;
+  width: auto;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 2;
+
+  &__logo {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 5rem;
+    width: 5rem;
+  }
+}

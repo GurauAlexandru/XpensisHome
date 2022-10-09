@@ -33,3 +33,7 @@ body {
   height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
   height: stretch;
 }
+
+.clickable {
+  cursor: pointer;
+}
