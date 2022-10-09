@@ -1,8 +1,8 @@
 import './user.styles.scss';
 
+import { useState, useCallback } from 'react';
 import Button from '../button/button.component';
 import ModalUser from '../modal-user/modal-user.component';
-import { useState, useCallback } from 'react';
 
 const User = ({ user }) => {
   const [modal, setModal] = useState(() => false);
@@ -23,7 +23,20 @@ const User = ({ user }) => {
       <Button className='button button__link' onClick={() => handleClick()}>
         {user.name}
       </Button>
-      {modal ? <ModalUser /> : ''}
+      {modal ? (
+        <ModalUser
+          button={
+            <Button
+              className='button button__normal'
+              onClick={() => handleClick()}
+            >
+              Close
+            </Button>
+          }
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 };

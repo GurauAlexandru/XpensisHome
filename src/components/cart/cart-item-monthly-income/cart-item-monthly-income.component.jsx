@@ -7,15 +7,11 @@ const CartItemMonthlyIncome = ({ salary, others, currency, totalIncome }) => (
       <h3 className='header h-large header-cart bk-green'>Monthly income</h3>
       <div className='cart-item-monthly__container'>
         <p className='p-cart-item'>Salary</p>
-        <p className='p-cart-item'>
-          +{salary} {currency}
-        </p>
+        <p className='p-cart-item'>+{salary}</p>
       </div>
       <div className='cart-item-monthly__container'>
         <p className='p-cart-item'>Others</p>
-        <p className='p-cart-item'>
-          +{others} {currency}
-        </p>
+        <p className='p-cart-item'>+{others}</p>
       </div>
     </div>
     <CartMonthlyTotal

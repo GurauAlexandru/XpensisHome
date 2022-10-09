@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-import users from '../store/users'; //temp
+// import users from '../store/users'; //temp
 
 export const UserContext = createContext({
   currentUser: null,
@@ -21,8 +21,8 @@ export const UserProvider = ({ children }) => {
   const currentYear = new Date().getFullYear();
   const currentMonth = 'august';
 
-  const [currentUser, setCurrentUser] = useState(() => users[0]);
-  // const [currentUser, setCurrentUser] = useState(() => null);
+  // const [currentUser, setCurrentUser] = useState(() => users[0]);
+  const [currentUser, setCurrentUser] = useState(() => null);
   const [year, setYear] = useState(() => currentYear);
   const [month, setMonth] = useState(() => currentMonth);
   const [currency, setCurrency] = useState(() => 'EUR');
@@ -32,11 +32,14 @@ export const UserProvider = ({ children }) => {
   const RON = 4.94;
   const USD = 0.98;
 
-  // Make toLocaleString changing when swithching from eur to usd or ron
-  // const locale = {
-  //   romania: 'ro-RO',
-  //   euro: '',
-  // };
+  let locale = 'it-IT';
+  const myLocaleOption = {
+    style: 'currency',
+    currency: currency,
+  };
+
+  if (currency === 'USD') locale = 'en-US';
+  if (currency === 'RON') locale = 'ro-RO';
 
   const accountDetails = () => {
     const curYear = currentUser.year;
@@ -116,6 +119,8 @@ export const UserProvider = ({ children }) => {
     setIsModalOpen,
     RON,
     USD,
+    myLocaleOption,
+    locale,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

@@ -14,7 +14,8 @@ import ModalAddData from '../../components/modal-add-data/modal-add-data.compone
 import { useEffect } from 'react';
 
 const AccountBudget = () => {
-  const { currentUser, currency, RON, USD } = useContext(UserContext);
+  const { currentUser, currency, RON, USD, myLocaleOption, locale } =
+    useContext(UserContext);
 
   const [addData, setAddData] = useState(false);
 
@@ -73,8 +74,7 @@ const AccountBudget = () => {
     <main className='body-container account-budget'>
       <Navigation header='Bugdet' />
       <BudgetTotalSavings
-        money={totalSavings.toLocaleString('RO-ro')}
-        currency={currency}
+        money={totalSavings.toLocaleString(`${locale}`, myLocaleOption)}
       />
       <section className='budget-container'>
         <h3 className='header h-cart-big'>Here are some things tou can do</h3>

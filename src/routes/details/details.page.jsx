@@ -9,8 +9,16 @@ import CartItemMonthlyOutcome from '../../components/cart/cart-item-monthly-outc
 import NoData from '../../components/errors/data/error.data.component';
 
 const AccountDetails = () => {
-  const { accountDetails, currentUser, year, month, currency, data, setData } =
-    useContext(UserContext);
+  const {
+    accountDetails,
+    currentUser,
+    year,
+    month,
+    data,
+    setData,
+    myLocaleOption,
+    locale,
+  } = useContext(UserContext);
 
   const {
     salary,
@@ -39,16 +47,23 @@ const AccountDetails = () => {
           <div className='account-details__container'>
             <div className='account-details__container--main'>
               <CartItemMonthlyIncome
-                salary={salary}
-                others={otherIncome}
-                totalIncome={totalIncome}
-                currency={currency}
+                salary={salary.toLocaleString(`${locale}`, myLocaleOption)}
+                others={otherIncome.toLocaleString(`${locale}`, myLocaleOption)}
+                totalIncome={totalIncome.toLocaleString(
+                  `${locale}`,
+                  myLocaleOption
+                )}
               />
               <CartItemMonthlyOutcome
                 bills={billsArray}
-                currency={currency}
-                otherOutcome={otherOutcome}
-                totalOutcome={totalOutcome}
+                otherOutcome={otherOutcome.toLocaleString(
+                  `${locale}`,
+                  myLocaleOption
+                )}
+                totalOutcome={totalOutcome.toLocaleString(
+                  `${locale}`,
+                  myLocaleOption
+                )}
               />
             </div>
           </div>
@@ -59,7 +74,10 @@ const AccountDetails = () => {
 
       <div className='account-details__total'>
         <h2 className='header h-large color-primary80'>Total money left:</h2>
-        <h2 className='header h-large color-primary80'>{` ${totalBalance} ${currency}`}</h2>
+        <h2 className='header h-large color-primary80'>{` ${totalBalance.toLocaleString(
+          `${locale}`,
+          myLocaleOption
+        )} `}</h2>
       </div>
     </section>
   );

@@ -13,8 +13,16 @@ import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/user.context';
 
 const Dashboard = () => {
-  const { accountDetails, currency, data, currentUser, year, month, setData } =
-    useContext(UserContext);
+  const {
+    accountDetails,
+    data,
+    currentUser,
+    year,
+    month,
+    setData,
+    myLocaleOption,
+    locale,
+  } = useContext(UserContext);
 
   const { salary, otherIncome, totalBills, otherOutcome } = accountDetails();
 
@@ -34,20 +42,29 @@ const Dashboard = () => {
         {data === true ? (
           <CartItem
             title='Account details'
-            balance={
-              <CartBalance totalBalance='22.500,00' currency={currency} />
-            }
+            balance={<CartBalance />}
             children={
               <CartContainer
-                salary={salary ? salary.toLocaleString('RO-ro') : '0'}
+                salary={
+                  salary
+                    ? salary.toLocaleString(`${locale}`, myLocaleOption)
+                    : '0'
+                }
                 otherIncome={
-                  otherIncome ? otherIncome.toLocaleString('RO-ro') : '0'
+                  otherIncome
+                    ? otherIncome.toLocaleString(`${locale}`, myLocaleOption)
+                    : '0'
                 }
-                bills={totalBills ? totalBills.toLocaleString('RO-ro') : '0'}
+                bills={
+                  totalBills
+                    ? totalBills.toLocaleString(`${locale}`, myLocaleOption)
+                    : '0'
+                }
                 otherOutcome={
-                  otherOutcome ? otherOutcome.toLocaleString('RO-ro') : '0'
+                  otherOutcome
+                    ? otherOutcome.toLocaleString(`${locale}`, myLocaleOption)
+                    : '0'
                 }
-                currency={currency}
               />
             }
             bar={<CartStatusBar />}
