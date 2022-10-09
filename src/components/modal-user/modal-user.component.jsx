@@ -1,9 +1,11 @@
 import './modal-user.styles.scss';
 
+import Currency from '../currency/currency.component';
+
 const ModalUser = () => {
   return (
     <section className='modal-user'>
-      <h4>Here will be some user clickable thinks</h4>
+      <Currency />
     </section>
   );
 };
