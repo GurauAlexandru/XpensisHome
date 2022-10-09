@@ -4,19 +4,23 @@ import { UserContext } from '../../../context/user.context';
 import { useContext } from 'react';
 
 const CartItemMonthlyOutcome = ({ bills, totalOutcome, otherOutcome }) => {
-  const { locale, myLocaleOption } = useContext(UserContext);
+  const { locale, myLocaleOption, USD, RON, currency } =
+    useContext(UserContext);
 
   return (
     <CartItemMonthly>
       <div className='cart-item-monthly__box'>
         <h3 className='header h-large header-cart bk-red'>Bills</h3>
         {bills.map((el) => {
+          let [key, value] = el;
+          if (currency === 'RON') value = value * RON;
+          if (currency === 'USD') value = value * USD;
           return (
-            <div key={el[0]} className='cart-item-monthly__container'>
+            <div key={key} className='cart-item-monthly__container'>
               <p className='p-cart-item'>{`${
-                el[0].charAt(0).toUpperCase() + el[0].slice(1)
+                key.charAt(0).toUpperCase() + key.slice(1)
               }`}</p>
-              <p className='p-cart-item'>{`-${el[1].toLocaleString(
+              <p className='p-cart-item'>{`-${value.toLocaleString(
                 `${locale}`,
                 myLocaleOption
               )}`}</p>
