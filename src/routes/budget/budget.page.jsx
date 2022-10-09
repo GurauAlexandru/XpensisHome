@@ -14,7 +14,7 @@ import ModalAddData from '../../components/modal-add-data/modal-add-data.compone
 import { useEffect } from 'react';
 
 const AccountBudget = () => {
-  const { currentUser, currency } = useContext(UserContext);
+  const { currentUser, currency, RON, USD } = useContext(UserContext);
 
   const [addData, setAddData] = useState(false);
 
@@ -42,7 +42,9 @@ const AccountBudget = () => {
 
     return yearTotal.reduce((cur, acc) => cur + acc, 0);
   });
-  const totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
+  let totalSavings = allTime.reduce((cur, acc) => cur + acc, 0);
+  if (currency === 'RON') totalSavings = totalSavings * RON;
+  if (currency === 'USD') totalSavings = totalSavings * USD;
 
   // Add data
   const openModalAddData = () => setAddData(true);

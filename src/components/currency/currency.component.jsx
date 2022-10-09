@@ -1,10 +1,11 @@
 import './currency.styles.scss';
 
+import { useContext } from 'react';
 import Button from '../button/button.component';
-import { useState } from 'react';
+import { UserContext } from '../../context/user.context';
 
 const Currency = () => {
-  const [currency, setCurrency] = useState('EUR');
+  const { currency, setCurrency } = useContext(UserContext);
 
   return (
     <div className='currency'>
@@ -16,7 +17,8 @@ const Currency = () => {
           <Button
             className={`button button__select ${
               currency === 'EUR' ? 'button__active' : ''
-            }`}
+            }
+            `}
             type='button'
             onClick={() => setCurrency('EUR')}
           >

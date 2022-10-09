@@ -25,9 +25,18 @@ export const UserProvider = ({ children }) => {
   // const [currentUser, setCurrentUser] = useState(() => null);
   const [year, setYear] = useState(() => currentYear);
   const [month, setMonth] = useState(() => currentMonth);
-  const [currency, setCurrency] = useState(() => '€');
+  const [currency, setCurrency] = useState(() => 'EUR');
   const [data, setData] = useState(() => true);
   const [isModalOpen, setIsModalOpen] = useState(() => false);
+
+  const RON = 4.94;
+  const USD = 0.98;
+
+  // Make toLocaleString changing when swithching from eur to usd or ron
+  // const locale = {
+  //   romania: 'ro-RO',
+  //   euro: '',
+  // };
 
   const accountDetails = () => {
     const curYear = currentUser.year;
@@ -37,22 +46,29 @@ export const UserProvider = ({ children }) => {
     const allMonths = Object.keys(currentMonth);
 
     const currentData = currentUser?.year[year][month];
-    const salary = currentData?.income.salary.reduce(
-      (cur, acc) => cur + acc,
-      0
-    );
 
-    const otherIncome = currentData?.income.others.reduce(
+    let salary = currentData?.income.salary.reduce((cur, acc) => cur + acc, 0);
+    if (currency === 'RON') salary = salary * RON;
+    if (currency === 'USD') salary = salary * USD;
+
+    let otherIncome = currentData?.income.others.reduce(
       (cur, acc) => cur + acc,
       0
     );
+    if (currency === 'RON') otherIncome = otherIncome * RON;
+    if (currency === 'USD') otherIncome = otherIncome * USD;
+
     const allBills = currentData?.outcome.bills;
     const allBillsValues = Object.values(allBills);
-    const totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
-    const otherOutcome = currentData?.outcome.others.reduce(
+    let totalBills = allBillsValues.reduce((cur, acc) => cur + acc, 0);
+    if (currency === 'RON') totalBills = totalBills * RON;
+    if (currency === 'USD') totalBills = totalBills * USD;
+    let otherOutcome = currentData?.outcome.others.reduce(
       (cur, acc) => cur + acc,
       0
     );
+    if (currency === 'RON') otherOutcome = otherOutcome * RON;
+    if (currency === 'USD') otherOutcome = otherOutcome * USD;
     const totalIncome = salary + otherIncome;
     const totalOutcome = totalBills + otherOutcome;
     const totalBalance = totalIncome - totalOutcome;
@@ -98,6 +114,8 @@ export const UserProvider = ({ children }) => {
     setData,
     isModalOpen,
     setIsModalOpen,
+    RON,
+    USD,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
