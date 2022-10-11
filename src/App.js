@@ -8,6 +8,7 @@ import Home from './routes/home/home.page';
 import Dashboard from './routes/dashboard/dashboard.page';
 import AccountBudget from './routes/budget/budget.page';
 import AccountDetails from './routes/details/details.page';
+import ModalUserProfile from './components/modal-user-profile/modal-user-profile.component';
 
 function App() {
   const { currentUser } = useContext(UserContext);
@@ -20,6 +21,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path='/details' element={<AccountDetails />} />
         <Route path='/budget' element={<AccountBudget />} />
+        <Route path='/my-profile' element={<ModalUserProfile />} />
       </Route>
     </Routes>
   );

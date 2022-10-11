@@ -1,0 +1,68 @@
+@import '../../styles/styles';
+
+.user-profile-page {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem 0;
+  background-color: $color-white;
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__navigation {
+    width: 80%;
+    height: 5rem;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid $color-dark-gray;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    width: 80%;
+    height: 50rem;
+    padding-top: 5rem;
+
+    display: flex;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 1rem 0;
+    }
+
+    &--menu {
+      width: 30%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+    }
+    &--content {
+      width: 70%;
+      height: 100%;
+      background-color: rgb(231, 232, 232);
+
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+        height: 50rem; //temp
+      }
+    }
+  }
+}
