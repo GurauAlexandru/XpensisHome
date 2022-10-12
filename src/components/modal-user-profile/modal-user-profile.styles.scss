@@ -36,6 +36,7 @@
       width: 100%;
       height: 100%;
       padding: 1rem 0;
+      align-items: center;
     }
 
     &--menu {
@@ -48,20 +49,32 @@
       align-items: flex-start;
 
       @media only screen and (max-width: $bp-small) {
-        width: 100%;
+        width: 80%;
         height: auto;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 3rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid $color-dark-gray;
       }
     }
-    &--content {
+    &--account {
       width: 70%;
       height: 100%;
-      background-color: rgb(231, 232, 232);
+      transition: all 0.2s ease-in;
 
       @media only screen and (max-width: $bp-small) {
-        width: 100%;
-        height: 50rem; //temp
+        width: 80%;
+        height: 100%; //temp
+      }
+    }
+    &--security {
+      width: 70%;
+      height: 100%;
+      transition: all 0.2s ease-in;
+
+      @media only screen and (max-width: $bp-small) {
+        width: 80%;
+        height: 100%; //temp
       }
     }
   }

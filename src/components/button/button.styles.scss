@@ -98,4 +98,20 @@
     background-color: $color-light-gray;
     transition: all 0.2s ease-in-out;
   }
+
+  &__text {
+    height: 2rem;
+    width: 4rem;
+    font-size: 1.6rem;
+    letter-spacing: 1.3px;
+    background-color: white;
+    color: $color-black;
+    margin: 0.5rem 0;
+
+    &--active {
+      color: $color-secondary;
+      font-size: 1.8rem;
+      transition: all 0.2s ease-in;
+    }
+  }
 }

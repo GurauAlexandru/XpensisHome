@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-small) {
+    margin: 0;
+  }
+
   &__img {
     height: 8rem;
     width: 8rem;
