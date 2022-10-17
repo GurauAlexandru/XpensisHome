@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/user.context';
 import ImageProfile from '../image-profile/image-profile.component';
 import Buton from '../button/button.component';
+import UserProfileSettingsAccount from '../user-profile-settings-account/user-profile-settings-account.component';
+import UserProfileSettingsSettings from '../user-profile-settings-security/user-profile-settings-security.component';
 
 const ModalUserProfile = () => {
   const { currentUser } = useContext(UserContext);
@@ -55,13 +57,9 @@ const ModalUserProfile = () => {
           </Buton>
         </div>
         {container ? (
-          <div className='user-profile-page__container--account'>
-            <h2 className='header h-xLarge'>Account settings</h2>
-          </div>
+          <UserProfileSettingsAccount />
         ) : (
-          <div className='user-profile-page__container--security'>
-            <h2 className='header h-xLarge'>Security settings</h2>
-          </div>
+          <UserProfileSettingsSettings />
         )}
       </div>
     </section>

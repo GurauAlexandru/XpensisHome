@@ -5,6 +5,8 @@ import { createContext, useState } from 'react';
 export const UserContext = createContext({
   currentUser: null,
   setCurrentUser: () => {},
+  currentName: '',
+  setCurrentName: () => {},
   year: '',
   setYear: () => {},
   month: '',
@@ -23,6 +25,7 @@ export const UserProvider = ({ children }) => {
 
   // const [currentUser, setCurrentUser] = useState(() => users[0]);
   const [currentUser, setCurrentUser] = useState(() => null);
+  const [currentName, setCurrentName] = useState('');
   const [year, setYear] = useState(() => currentYear);
   const [month, setMonth] = useState(() => currentMonth);
   const [currency, setCurrency] = useState(() => 'EUR');
@@ -103,6 +106,8 @@ export const UserProvider = ({ children }) => {
   const value = {
     currentUser,
     setCurrentUser,
+    currentName,
+    setCurrentName,
     year,
     setYear,
     month,

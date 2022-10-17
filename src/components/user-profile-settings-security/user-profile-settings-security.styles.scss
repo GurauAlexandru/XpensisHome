@@ -1,0 +1,12 @@
+@import '../../styles/styles';
+
+.user-profile-settings-security {
+  width: 70%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 80%;
+    height: 100%;
+  }
+}

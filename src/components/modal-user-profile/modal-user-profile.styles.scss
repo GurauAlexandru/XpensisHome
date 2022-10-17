@@ -57,25 +57,5 @@
         border-bottom: 1px solid $color-dark-gray;
       }
     }
-    &--account {
-      width: 70%;
-      height: 100%;
-      transition: all 0.2s ease-in;
-
-      @media only screen and (max-width: $bp-small) {
-        width: 80%;
-        height: 100%;
-      }
-    }
-    &--security {
-      width: 70%;
-      height: 100%;
-      transition: all 0.2s ease-in;
-
-      @media only screen and (max-width: $bp-small) {
-        width: 80%;
-        height: 100%;
-      }
-    }
   }
 }
