@@ -38,8 +38,6 @@ const UserProfileSettingsAccount = () => {
 
     user.name = name;
     user.email = email;
-
-    // console.log(users);
   };
 
   const handleChange = (event) => {
@@ -51,6 +49,7 @@ const UserProfileSettingsAccount = () => {
   return (
     <div className='user-profile-settings-account'>
       <h2 className='header h-xLarge'>Account settings</h2>
+      <p className='p-cart-item'>Update your name and email address:</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();
