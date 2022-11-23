@@ -1,5 +1,6 @@
 import './welcome.styles.scss';
 import welcomeWallpaper from '../../assets/wallpapers/welcome-page.webp';
+import whatsappIcon from '../../assets/icons/WhatsAppButtonGreenLarge.svg';
 import { useState } from 'react';
 
 import Button from '../../components/button/button.component';
@@ -25,6 +26,11 @@ const WelcomePage = () => {
       <div className='welcome-page__container'>
         <h1 className='header h-big handwrite'>Xpenses Home</h1>
         {account ? <SignIn /> : <RegisterForm />}
+        {
+          <a aria-label='Chat on WhatsApp' href='https://wa.me/+40799980957'>
+            <img alt='Chat on WhatsApp' src={whatsappIcon} />
+          </a>
+        }
         <h4 className='header h-small'>
           {account ? " Don't have an account? " : 'Have an account? '}
           <Button
