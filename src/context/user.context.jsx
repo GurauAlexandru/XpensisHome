@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-import users from '../store/users'; //temp
+// import users from '../store/users'; //temp
 
 export const UserContext = createContext({
   currentUser: null,
@@ -18,13 +18,13 @@ export const UserContext = createContext({
 });
 
 export const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(() => users[0]);
+  // const [currentUser, setCurrentUser] = useState(() => users[0]);
   // console.log(currentUser.year);
 
   const currentYear = 2022; //maybe i'll make this dinamic
   const currentMonth = 'august';
 
-  // const [currentUser, setCurrentUser] = useState(() => null);
+  const [currentUser, setCurrentUser] = useState(() => null);
   const [year, setYear] = useState(() => currentYear);
   const [month, setMonth] = useState(() => currentMonth);
   const [currency, setCurrency] = useState(() => 'EUR');
