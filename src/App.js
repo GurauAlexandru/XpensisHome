@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useContext } from 'react';
-
 import { UserContext } from './context/user.context';
-
 import WelcomePage from './routes/welcome page/welcome.page';
 import Home from './routes/home/home.page';
 import Dashboard from './routes/dashboard/dashboard.page';
