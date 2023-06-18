@@ -14,7 +14,7 @@ export const UserContext = createContext({
   data: true,
   setData: () => {},
   isModalOpen: false,
-  setIsModalOpen: () => {},
+  setIsModalOpen: () => {}
 });
 
 export const UserProvider = ({ children }) => {
@@ -37,7 +37,7 @@ export const UserProvider = ({ children }) => {
   let locale = 'it-IT';
   const myLocaleOption = {
     style: 'currency',
-    currency: currency,
+    currency: currency
   };
 
   if (currency === 'USD') locale = 'en-US';
@@ -48,7 +48,6 @@ export const UserProvider = ({ children }) => {
     const allYears = Object.keys(curYear);
 
     const currentMonth = currentUser?.year[year];
-    console.log(currentMonth);
     const allMonths = Object.keys(currentMonth);
 
     const currentData = currentUser?.year[year][month];
@@ -94,7 +93,7 @@ export const UserProvider = ({ children }) => {
       allMonths,
       allYears,
       myIncomePercentage,
-      myOutcomePercentage,
+      myOutcomePercentage
     };
   };
 
@@ -123,7 +122,7 @@ export const UserProvider = ({ children }) => {
     RON,
     USD,
     myLocaleOption,
-    locale,
+    locale
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
